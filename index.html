@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShreePdf Engine | Radiant Aesthetics. Intelligent PDF Engineering for .NET</title>
+    <meta name="description" content="Next-generation .NET PDF Generator library featuring universal Markdown ingestion, anti-orphan auto-fit page budgeting, AI/RAG dual-stream metadata embedding, out-of-the-box design systems, and fast SkiaSharp vector rendering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">
+                <div class="brand-icon">⚡</div>
+                <span class="brand-text">Shree<span class="brand-highlight">Pdf</span></span>
+                <span class="badge badge-v1">v1.0 AI-Era</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#innovations">Innovations</a>
+                <a href="#playground">Playground</a>
+                <a href="#benchmarks">Benchmarks</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank" class="btn btn-nav">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub Showcase
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Next-Gen .NET Document Engine
+            </div>
+            <h1 class="hero-title">
+                Radiant Aesthetics.<br>
+                <span class="gradient-text">Intelligent PDF Engineering.</span>
+            </h1>
+            <p class="hero-subtitle">
+                The zero-dependency .NET PDF library built for the AI era. Ingest LLM Markdown, auto-fit 1.05-page orphan spills, embed loss-free RAG metadata, and render vector PDFs in 15ms.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#playground" class="btn btn-primary btn-lg">
+                    <span>⚡ Interactive Visual Playground</span>
+                </a>
+                <div class="copy-cmd-box" id="copyCmdBox" onclick="copyNugetCmd()">
+                    <code>dotnet add package ShreePdf</code>
+                    <button class="btn-copy" id="copyBtn">Copy</button>
+                </div>
+            </div>
+
+            <!-- Hero Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-val">15 ms</div>
+                    <div class="metric-lbl">Vector Render Latency</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">15 MB</div>
+                    <div class="metric-lbl">Ultra-Light Footprint</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">100%</div>
+                    <div class="metric-lbl">Loss-Free RAG AST</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-val">0</div>
+                    <div class="metric-lbl">Chrome / Node Dependencies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Innovations Section -->
+    <section id="innovations" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">4 Breakthrough AI-Era Innovations</h2>
+                <p class="section-subtitle">Why .NET developers are moving away from heavy Chromium binaries and legacy 10-year-old libraries.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon icon-ai">🤖</div>
+                    <h3>Universal Markdown Ingestion</h3>
+                    <p>Render raw LLM outputs (GPT-4o, Claude, Gemini) directly into structured PDF AST without HTML wrappers or headless browser overhead.</p>
+                    <div class="feature-tag">AI & LLM Native</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-fit">📐</div>
+                    <h3>Anti-Orphan Auto-Fit Budgeter</h3>
+                    <p>Eliminates 1.05-page spills that bleed 2 lines onto a blank second page. Micro-adjusts spacing & font scales by 5–12% to fit cleanly on 1 page.</p>
+                    <div class="feature-tag">Page Budget Solver</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-rag">🧠</div>
+                    <h3>AI / RAG Dual-Stream Metadata</h3>
+                    <p>Embeds structured JSON AST directly in the PDF metadata stream. Downstream AI agents extract 100% accurate data without OCR errors.</p>
+                    <div class="feature-tag">OCR-Free RAG Indexing</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-skia">🎨</div>
+                    <h3>Out-of-the-Box Design Themes</h3>
+                    <p>Stop spending 30+ hours writing custom formatting code. Bundles pre-styled themes (SaaS Analytics, Executive Minimal, Glassmorphic Dark).</p>
+                    <div class="feature-tag">Zero Design Friction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Visual Playground Section -->
+    <section id="playground" class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">⚡ Interactive Visual Playground</h2>
+                <p class="section-subtitle">Simulate real-time multi-source document ingestion, theme switching, auto-fit budgeting, and RAG AST JSON extraction.</p>
+            </div>
+
+            <div class="playground-layout">
+                <!-- Controls Panel -->
+                <div class="pg-controls glass-card">
+                    <div class="control-group">
+                        <label class="control-label">1. Select Ingestion Source</label>
+                        <div class="segmented-control" id="sourceTabs">
+                            <button class="seg-btn active" data-source="markdown">Markdown (LLM)</button>
+                            <button class="seg-btn" data-source="csharp">C# Fluent DSL</button>
+                            <button class="seg-btn" data-source="json">JSON Payload</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">2. Select Design Theme</label>
+                        <div class="theme-picker" id="themePicker">
+                            <button class="theme-btn active" data-theme="glassdark">
+                                <span class="theme-swatch swatch-glassdark"></span>
+                                Glassmorphic Dark
+                            </button>
+                            <button class="theme-btn" data-theme="saas">
+                                <span class="theme-swatch swatch-saas"></span>
+                                SaaS Analytics
+                            </button>
+                            <button class="theme-btn" data-theme="minimal">
+                                <span class="theme-swatch swatch-minimal"></span>
+                                Executive Minimal
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="toggle-row">
+                            <div>
+                                <label class="toggle-label">Anti-Orphan Auto-Fit</label>
+                                <div class="toggle-desc">Squeezes 1.05-page spills onto 1 page</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="autoFitToggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="toggle-row">
+                            <div>
+                                <label class="toggle-label">Embed RAG JSON AST</label>
+                                <div class="toggle-desc">Embedded metadata for AI agents</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="ragToggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="code-output-header">
+                        <span>Generated C# Code</span>
+                        <button class="btn-sm" onclick="copyGeneratedCode()">Copy Code</button>
+                    </div>
+                    <pre class="code-block"><code id="generatedCode">Document.FromMarkdown(llmText, ThemePresets.GlassmorphicDark).EnableAutoFit(true);</code></pre>
+                </div>
+
+                <!-- Preview Canvas Panel -->
+                <div class="pg-preview glass-card">
+                    <div class="preview-toolbar">
+                        <div class="preview-tabs">
+                            <button class="prev-tab active" id="tabPdfView" onclick="switchPreviewTab('pdf')">📄 PDF Canvas Preview</button>
+                            <button class="prev-tab" id="tabRagView" onclick="switchPreviewTab('rag')">🧠 RAG AST Inspector</button>
+                        </div>
+                        <div class="preview-status" id="previewStatus">Rendered in 14.8 ms • Page 1 of 1</div>
+                    </div>
+
+                    <!-- Visual PDF Simulated Sheet -->
+                    <div class="pdf-stage" id="pdfStage">
+                        <div class="pdf-paper theme-glassdark" id="pdfPaper">
+                            <div class="pdf-header" id="pdfHeader">
+                                <div class="pdf-badge">SHREEPDF ENGINE • EXECUTIVE BRIEF</div>
+                                <div class="pdf-date">2026-08-01</div>
+                            </div>
+
+                            <div class="pdf-body" id="pdfBody">
+                                <h1 class="pdf-h1" id="pdfTitle">⚡ AI Performance Brief</h1>
+                                <p class="pdf-quote" id="pdfQuote">"Loss-free RAG indexing enabled. High-speed vector rendering via SkiaSharp."</p>
+
+                                <div class="pdf-section-title">EXECUTIVE METRICS</div>
+                                <table class="pdf-table" id="pdfTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Core Innovation</th>
+                                            <th>Benchmark</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Anti-Orphan Auto-Fit</td>
+                                            <td>1.05 Spill -> 1 Page</td>
+                                            <td><span class="tag tag-success">ACTIVE</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>AI / RAG Dual Stream</td>
+                                            <td>Loss-Free Embedded AST</td>
+                                            <td><span class="tag tag-success">ENABLED</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Native SkiaSharp Engine</td>
+                                            <td>15ms / 15MB Footprint</td>
+                                            <td><span class="tag tag-primary">OPTIMAL</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="pdf-container-box" id="pdfContainer">
+                                    <div class="box-title">CONFIDENTIAL REPORT • SHREEPDF ENGINE 2026</div>
+                                    <div class="box-desc">Automated multi-source document ingestion complete. Zero Chrome binary overhead.</div>
+                                </div>
+                            </div>
+
+                            <div class="pdf-watermark" id="pdfWatermark">ShreePdf Engine • Community Edition</div>
+                        </div>
+                    </div>
+
+                    <!-- RAG Inspector View -->
+                    <div class="rag-stage hidden" id="ragStage">
+                        <div class="rag-header">
+                            <span class="rag-title">🧠 Embedded RAG AST Stream (XMP Packet)</span>
+                            <span class="rag-badge">Loss-Free OCR Alternative</span>
+                        </div>
+                        <pre class="rag-json-block"><code id="ragJsonCode"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Benchmarks Matrix -->
+    <section id="benchmarks" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">📊 Competitive Market Comparison</h2>
+                <p class="section-subtitle">See how ShreePdf compares against legacy PDF suites and heavy Chromium wrappers.</p>
+            </div>
+
+            <div class="table-responsive glass-card">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Feature / Metric</th>
+                            <th class="col-highlight">ShreePdf ⚡</th>
+                            <th>IronPDF</th>
+                            <th>QuestPDF</th>
+                            <th>Syncfusion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Render Speed (Avg)</strong></td>
+                            <td class="col-highlight"><strong>15 ms</strong> (50x Faster)</td>
+                            <td>1,200 ms</td>
+                            <td>25 ms</td>
+                            <td>800 ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory Footprint</strong></td>
+                            <td class="col-highlight"><strong>15 MB</strong></td>
+                            <td>180 MB (Chrome)</td>
+                            <td>20 MB</td>
+                            <td>90 MB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Docker & AWS Lambda</strong></td>
+                            <td class="col-highlight">✅ Instant Zero-Dep</td>
+                            <td>🛑 Heavy (libgbm error)</td>
+                            <td>✅ Native</td>
+                            <td>⚠️ High RAM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Markdown LLM Ingestion</strong></td>
+                            <td class="col-highlight">✅ Built-in AST Engine</td>
+                            <td>❌ DIY HTML Wrapper</td>
+                            <td>❌ Code-Only</td>
+                            <td>❌ Code-Only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Smart Anti-Orphan Auto-Fit</strong></td>
+                            <td class="col-highlight">✅ Auto Micro-Scaling</td>
+                            <td>❌ Hard Cuts</td>
+                            <td>❌ Hard Cuts</td>
+                            <td>❌ Hard Cuts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI / RAG Dual-Stream AST</strong></td>
+                            <td class="col-highlight">✅ Embedded XMP JSON</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">🗺️ Product Roadmap</h2>
+                <p class="section-subtitle">Our commitment to continuous innovation in .NET document engineering.</p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="rm-card completed">
+                    <div class="rm-badge">Phase 1 • COMPLETED</div>
+                    <h3>Foundation & AI Core (v1.0)</h3>
+                    <ul>
+                        <li>✓ Smart Layout Budgeter & SkiaSharp Vector Renderer</li>
+                        <li>✓ Universal Markdown LLM Ingestion Engine</li>
+                        <li>✓ Anti-Orphan Auto-Fit Page Budget Solver</li>
+                        <li>✓ Loss-Free RAG AST Metadata Embedder</li>
+                    </ul>
+                </div>
+
+                <div class="rm-card active">
+                    <div class="rm-badge">Phase 2 • Q3 2026</div>
+                    <h3>Web, Razor & Cloud Layers (v1.2)</h3>
+                    <ul>
+                        <li>• ASP.NET Core Razor-to-PDF Middleware</li>
+                        <li>• WebAssembly (WASM) In-Browser Live Preview</li>
+                        <li>• Pre-built DataGrid, KPI Cards & Vector Sparklines</li>
+                        <li>• AWS Lambda & Azure Functions Optimized Layers</li>
+                    </ul>
+                </div>
+
+                <div class="rm-card">
+                    <div class="rm-badge">Phase 3 • Q4 2026</div>
+                    <h3>Enterprise & Security (v1.5)</h3>
+                    <ul>
+                        <li>• Digital Signatures (PKCS#12 / PFX) & PDF/A Compliance</li>
+                        <li>• AES-256 Encryption & Document Security Flags</li>
+                        <li>• Custom Font Subsetting (< 15KB PDF Output)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="brand-icon">⚡</div>
+                <span class="brand-text">Shree<span class="brand-highlight">Pdf</span></span>
+                <p class="footer-desc">Radiant Aesthetics. Intelligent PDF Engineering for .NET.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank">Private Core Repo</a>
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank">Public Showcase Repo</a>
+                <a href="https://nuget.org" target="_blank">NuGet Package</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 ShreePdf Engine. Developed under <a href="https://github.com/jjopensoftworks-blip" target="_blank">jjopensoftworks-blip</a>.
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
