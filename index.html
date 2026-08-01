@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShreePdf Engine | Radiant Aesthetics. Intelligent PDF Engineering for .NET</title>
     <meta name="description" content="Next-generation .NET PDF Generator library featuring universal Markdown ingestion, anti-orphan auto-fit page budgeting, AI/RAG dual-stream metadata embedding, out-of-the-box design systems, and fast SkiaSharp vector rendering.">
+
+    <!-- Favicon / Brand Icon (official icon mark, matches navbar/footer) -->
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Social Preview -->
+    <meta property="og:title" content="ShreePdf Engine | Intelligent PDF Engineering for .NET">
+    <meta property="og:description" content="Zero-dependency .NET PDF library built for the AI era. Markdown ingestion, anti-orphan auto-fit, RAG metadata embedding, SkiaSharp vector rendering.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,18 +31,16 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#" class="brand">
-                <img src="logo.png" alt="ShreePdf Engine Logo" class="brand-logo-img">
+                <img src="icon.png" alt="ShreePdf Icon" class="brand-icon-img">
+                <span class="brand-word">Shree<span class="gradient-text">Pdf</span></span>
                 <span class="badge badge-v1">v1.0 AI-Era</span>
             </a>
             <nav class="nav-links">
                 <a href="#innovations">Innovations</a>
+                <a href="#how-it-works">How It Works</a>
                 <a href="#playground">Playground</a>
                 <a href="#benchmarks">Benchmarks</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank" class="btn btn-nav">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    GitHub Showcase
-                </a>
+                <a href="#faq">FAQ</a>
             </nav>
         </div>
     </header>
@@ -38,7 +49,7 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-logo-banner">
-                <img src="logo.png" alt="ShreePdf Engine Official Logo" class="hero-logo-img">
+                <img src="logo.png" alt="ShreePdf Engine Logo" class="hero-logo-img">
             </div>
             <div class="hero-badge">
                 <span class="pulse-dot"></span> Next-Gen .NET Document Engine
@@ -55,7 +66,7 @@
                 <a href="#playground" class="btn btn-primary btn-lg">
                     <span>⚡ Interactive Visual Playground</span>
                 </a>
-                <div class="copy-cmd-box" id="copyCmdBox" onclick="copyNugetCmd()">
+                <div class="copy-cmd-box" id="copyCmdBox" onclick="copyNugetCmd(event)">
                     <code>dotnet add package ShreePdf</code>
                     <button class="btn-copy" id="copyBtn">Copy</button>
                 </div>
@@ -87,6 +98,7 @@
     <section id="innovations" class="section">
         <div class="container">
             <div class="section-header text-center">
+                <span class="section-eyebrow">🤖 Core Innovations</span>
                 <h2 class="section-title">4 Breakthrough AI-Era Innovations</h2>
                 <p class="section-subtitle">Why .NET developers are moving away from heavy Chromium binaries and legacy 10-year-old libraries.</p>
             </div>
@@ -123,11 +135,44 @@
         </div>
     </section>
 
-    <!-- Interactive Visual Playground Section -->
-    <section id="playground" class="section section-dark">
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section section-dark">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">⚡ Interactive Visual Playground</h2>
+                <span class="section-eyebrow">🛠️ Workflow</span>
+                <h2 class="section-title">From Install to Rendered PDF in 3 Steps</h2>
+                <p class="section-subtitle">No headless browser to configure, no HTML templating layer to maintain — just the fluent .NET API.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Install the Package</h3>
+                    <p>Add the zero-dependency NuGet package to any .NET project — no Chrome, no Node, no native binaries to bundle.</p>
+                    <code class="step-code">dotnet add package ShreePdf</code>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Ingest Your Content</h3>
+                    <p>Feed it raw LLM Markdown, build documents with the C# fluent DSL, or bind a JSON payload straight from your API.</p>
+                    <code class="step-code">Document.FromMarkdown(text, theme)</code>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Render & Ship</h3>
+                    <p>Get a themed, auto-fit PDF with embedded RAG metadata back as bytes — vector-rendered via SkiaSharp in ~15ms.</p>
+                    <code class="step-code">doc.GenerateBytes();</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Visual Playground Section -->
+    <section id="playground" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">⚡ Try It Live</span>
+                <h2 class="section-title">Interactive Visual Playground</h2>
                 <p class="section-subtitle">Simulate real-time multi-source document ingestion, theme switching, auto-fit budgeting, and RAG AST JSON extraction.</p>
             </div>
 
@@ -268,10 +313,11 @@
     </section>
 
     <!-- Competitive Benchmarks Matrix -->
-    <section id="benchmarks" class="section">
+    <section id="benchmarks" class="section section-dark">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">📊 Competitive Market Comparison</h2>
+                <span class="section-eyebrow">📊 Benchmarks</span>
+                <h2 class="section-title">Competitive Market Comparison</h2>
                 <p class="section-subtitle">See how ShreePdf compares against legacy PDF suites and heavy Chromium wrappers.</p>
             </div>
 
@@ -335,55 +381,12 @@
         </div>
     </section>
 
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="section section-dark">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">🗺️ Product Roadmap</h2>
-                <p class="section-subtitle">Our commitment to continuous innovation in .NET document engineering.</p>
-            </div>
-
-            <div class="roadmap-timeline">
-                <div class="rm-card completed">
-                    <div class="rm-badge">Phase 1 • COMPLETED</div>
-                    <h3>Foundation & AI Core (v1.0)</h3>
-                    <ul>
-                        <li>✓ Smart Layout Budgeter & SkiaSharp Vector Renderer</li>
-                        <li>✓ Universal Markdown LLM Ingestion Engine</li>
-                        <li>✓ Anti-Orphan Auto-Fit Page Budget Solver</li>
-                        <li>✓ Loss-Free RAG AST Metadata Embedder</li>
-                    </ul>
-                </div>
-
-                <div class="rm-card active">
-                    <div class="rm-badge">Phase 2 • Q3 2026</div>
-                    <h3>Web, Razor & Cloud Layers (v1.2)</h3>
-                    <ul>
-                        <li>• ASP.NET Core Razor-to-PDF Middleware</li>
-                        <li>• WebAssembly (WASM) In-Browser Live Preview</li>
-                        <li>• Pre-built DataGrid, KPI Cards & Vector Sparklines</li>
-                        <li>• AWS Lambda & Azure Functions Optimized Layers</li>
-                    </ul>
-                </div>
-
-                <div class="rm-card">
-                    <div class="rm-badge">Phase 3 • Q4 2026</div>
-                    <h3>Enterprise & Security (v1.5)</h3>
-                    <ul>
-                        <li>• Digital Signatures (PKCS#12 / PFX) & PDF/A Compliance</li>
-                        <li>• AES-256 Encryption & Document Security Flags</li>
-                        <li>• Custom Font Subsetting (< 15KB PDF Output)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Changelog & Release Notes Section -->
     <section id="changelog" class="section">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">📋 Public Release History & Changelog</h2>
+                <span class="section-eyebrow">📋 Changelog</span>
+                <h2 class="section-title">Public Release History</h2>
                 <p class="section-subtitle">Track public version milestones and upcoming pipeline updates.</p>
             </div>
 
@@ -420,16 +423,102 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">💬 FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything developers ask before adding ShreePdf to a .NET project.</p>
+            </div>
+
+            <div class="faq-list" id="faqList">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        <span>Is ShreePdf free and open source?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The public showcase and playground in this repository are open source under the Mozilla Public License 2.0. See the <a href="LICENSE">LICENSE</a> file for full terms.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does it need Chrome, Node, or any headless browser?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. ShreePdf renders vector PDFs natively via SkiaSharp, with zero Chrome or Node dependencies — no <code>libgbm</code> errors, no headless browser binaries to bundle in Docker or Lambda.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I feed it raw Markdown straight from an LLM?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. <code>Document.FromMarkdown()</code> ingests raw LLM output (GPT-4o, Claude, Gemini, etc.) directly into a structured PDF AST — no manual HTML wrapping required.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What .NET versions does it target?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ShreePdf ships as a standard NuGet package (<code>dotnet add package ShreePdf</code>) built for modern .NET. Check the NuGet listing for the exact supported target framework versions for each release.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I customize or build my own design theme?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. ShreePdf bundles pre-styled themes (Glassmorphic Dark, SaaS Analytics, Executive Minimal) via <code>ThemePresets</code>, and the fluent DSL lets you override colors, spacing, and typography per document.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Where do I track releases or report issues?</span>
+                        <span class="faq-toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Track version milestones in the <a href="#changelog">Changelog</a> section above, or open an issue on the <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank">public showcase repo</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Band -->
+    <section class="cta-band">
+        <div class="container cta-band-container">
+            <h2 class="cta-title">Ship your first AI-era PDF in minutes.</h2>
+            <p class="cta-subtitle">Zero-dependency, 15ms vector rendering, built for .NET developers working with LLMs.</p>
+            <div class="cta-buttons">
+                <div class="copy-cmd-box" onclick="copyNugetCmd(event)">
+                    <code>dotnet add package ShreePdf</code>
+                    <button class="btn-copy" id="copyBtnCta">Copy</button>
+                </div>
+                <a href="#playground" class="btn btn-primary btn-lg">
+                    <span>⚡ Open the Playground</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="logo.png" alt="ShreePdf Engine Logo" class="footer-logo-img">
+                <div class="footer-brand-row">
+                    <img src="icon.png" alt="ShreePdf Icon" class="footer-icon-img">
+                    <span class="footer-word">Shree<span class="gradient-text">Pdf</span></span>
+                </div>
                 <p class="footer-desc">Radiant Aesthetics. Intelligent PDF Engineering for .NET.</p>
             </div>
             <div class="footer-links">
-                <a href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank">Private Core Repo</a>
-                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank">Public Showcase Repo</a>
                 <a href="https://nuget.org" target="_blank">NuGet Package</a>
             </div>
         </div>
