@@ -7,7 +7,7 @@
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Playground-brightgreen?style=for-the-badge&logo=github)](https://jjopensoftworks-blip.github.io/ShreePdfPage)
-[![Changelog](https://img.shields.io/badge/Changelog-v1.0.0%20Released%20%7C%20v1.2.0%20Pipeline-orange?style=for-the-badge&logo=github)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v1.3.0%20Latest-brightgreen?style=for-the-badge&logo=nuget)](CHANGELOG.md)
 [![Core Repo](https://img.shields.io/badge/Core%20Engine-ShreePdf.git-512BD4?style=for-the-badge&logo=dotnet)](https://github.com/jjopensoftworks-blip/ShreePdf)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
