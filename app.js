@@ -146,13 +146,29 @@ function switchPreviewTab(tab) {
 }
 
 // Copy NuGet Command
-function copyNugetCmd() {
+function copyNugetCmd(event) {
     const cmd = "dotnet add package ShreePdf";
     navigator.clipboard.writeText(cmd);
-    const btn = document.getElementById('copyBtn');
+    const btn = event.currentTarget.querySelector('.btn-copy');
+    if (!btn) return;
+    const original = btn.textContent;
     btn.textContent = "Copied!";
-    setTimeout(() => { btn.textContent = "Copy"; }, 2000);
+    setTimeout(() => { btn.textContent = original; }, 2000);
 }
+
+// FAQ Accordion
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            faqItems.forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', initFaqAccordion);
 
 // Copy Generated C# Code
 function copyGeneratedCode() {
