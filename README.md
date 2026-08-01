@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="logo.png" width="360" alt="ShreePdf Engine Logo"><br><br>
+
 # 🌐 ShreePdf Showcase & Visual Playground
 
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
