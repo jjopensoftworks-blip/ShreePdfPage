@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2026 jjopensoftworks-blip. All rights reserved.
+ * ShreePdf Engine - Radiant Aesthetics and Intelligent PDF Engineering for .NET
+ */
+
 // ShreePdf Interactive Playground Application Logic (v1.3.0 Engine Release)
 document.addEventListener('DOMContentLoaded', () => {
     let currentSource = 'markdown';
