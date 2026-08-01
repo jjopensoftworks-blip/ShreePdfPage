@@ -7,10 +7,11 @@
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Playground-brightgreen?style=for-the-badge&logo=github)](https://jjopensoftworks-blip.github.io/ShreePdfPage)
+[![Changelog](https://img.shields.io/badge/Changelog-v1.0.0%20Released%20%7C%20v1.2.0%20Pipeline-orange?style=for-the-badge&logo=github)](CHANGELOG.md)
 [![Core Repo](https://img.shields.io/badge/Core%20Engine-ShreePdf.git-512BD4?style=for-the-badge&logo=dotnet)](https://github.com/jjopensoftworks-blip/ShreePdf)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-*This repository contains the interactive web playground, design system showcase, documentation, and live PDF canvas simulator for the **ShreePdf Engine**.*
+*This repository contains the interactive web playground, design system showcase, documentation, public release changelog, and live PDF canvas simulator for the **ShreePdf Engine**.*
 
 ---
 
