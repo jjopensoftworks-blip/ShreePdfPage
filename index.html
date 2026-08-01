@@ -37,7 +37,9 @@
             </a>
             <nav class="nav-links">
                 <a href="#innovations">Innovations</a>
-                <a href="#how-it-works">How It Works</a>
+                <a href="#razor-html">Razor & HTML</a>
+                <a href="#qa-matrix">316 Unit Tests</a>
+                <a href="#widgets">Visual Widgets</a>
                 <a href="#playground">Playground</a>
                 <a href="#benchmarks">Benchmarks</a>
                 <a href="#faq">FAQ</a>
@@ -51,15 +53,20 @@
             <div class="hero-logo-banner">
                 <img src="logo.png" alt="ShreePdf Engine Logo" class="hero-logo-img">
             </div>
-            <div class="hero-badge">
-                <span class="pulse-dot"></span> Next-Gen .NET Document Engine
+            <div class="hero-badge-container" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span> Next-Gen .NET Document Engine
+                </div>
+                <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" style="text-decoration: none;">
+                    <img src="https://img.shields.io/badge/NuGet-v1.3.0-004880?style=for-the-badge&logo=nuget" alt="NuGet Package v1.3.0" style="height: 28px; border-radius: 6px;">
+                </a>
             </div>
             <h1 class="hero-title">
-                Radiant Aesthetics.<br>
-                <span class="gradient-text">Intelligent PDF Engineering.</span>
+                ShreePdf Engine<br>
+                <span class="gradient-text">Radiant Aesthetics. Intelligent PDF Engineering.</span>
             </h1>
             <p class="hero-subtitle">
-                The zero-dependency .NET PDF library built for the AI era. Ingest LLM Markdown, auto-fit 1.05-page orphan spills, embed loss-free RAG metadata, and render vector PDFs in 15ms.
+                Radiant Aesthetics. Intelligent PDF Engineering for .NET. Features universal Markdown & HTML ingestion, anti-orphan auto-fit page budgeting, AI/RAG dual-stream metadata embedding, and SkiaSharp 2D vector rendering.
             </p>
 
             <div class="hero-buttons">
@@ -99,16 +106,23 @@
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-eyebrow">🤖 Core Innovations</span>
-                <h2 class="section-title">4 Breakthrough AI-Era Innovations</h2>
+                <h2 class="section-title">6 Breakthrough AI-Era Innovations</h2>
                 <p class="section-subtitle">Why .NET developers are moving away from heavy Chromium binaries and legacy 10-year-old libraries.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon icon-ai">🤖</div>
-                    <h3>Universal Markdown Ingestion</h3>
+                    <h3>Universal LLM Ingestion</h3>
                     <p>Render raw LLM outputs (GPT-4o, Claude, Gemini) directly into structured PDF AST without HTML wrappers or headless browser overhead.</p>
                     <div class="feature-tag">AI & LLM Native</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon icon-rag">🌐</div>
+                    <h3>ASP.NET Core Razor & HTML</h3>
+                    <p>Direct HTML tag parser (h1-h6, b, i, a, p, table, ul, li) and Minimal API <code>PdfResult</code> without Chrome or headless browser binaries.</p>
+                    <div class="feature-tag">v1.3.0 Middleware</div>
                 </div>
 
                 <div class="feature-card">
@@ -126,8 +140,15 @@
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-icon icon-skia">📊</div>
+                    <h3>Visual Widgets & Vector Charts</h3>
+                    <p>KPI Stat Cards, DataGrid pagination, native Vector Sparklines, Progress Bars, and Barcode / QR Code renderers out-of-the-box.</p>
+                    <div class="feature-tag">Vector Graphics Engine</div>
+                </div>
+
+                <div class="feature-card">
                     <div class="feature-icon icon-skia">🎨</div>
-                    <h3>Out-of-the-Box Design Themes</h3>
+                    <h3>Out-of-the-Box Preset Themes</h3>
                     <p>Stop spending 30+ hours writing custom formatting code. Bundles pre-styled themes (SaaS Analytics, Executive Minimal, Glassmorphic Dark).</p>
                     <div class="feature-tag">Zero Design Friction</div>
                 </div>
@@ -165,6 +186,146 @@
                 </div>
             </div>
         </div>
+    <!-- ASP.NET Core & Razor HTML Middleware Section -->
+    <section id="razor-html" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">🌐 v1.3.0 Release</span>
+                <h2 class="section-title">ASP.NET Core Razor & HTML Middleware</h2>
+                <p class="section-subtitle">Zero-dependency HTML tag parsing (h1–h6, p, table, ul, li, inline CSS) and Minimal API <code>PdfResult</code> without headless browser runtimes.</p>
+            </div>
+
+            <div class="widgets-grid">
+                <div class="widget-card">
+                    <h3>⚡ Minimal API Integration</h3>
+                    <p>Return PDFs directly from ASP.NET Core endpoint handlers with <code>IResult</code> compatibility.</p>
+                    <pre class="step-code"><code style="color: #a7f3d0;">app.MapGet("/api/invoice", () => 
+    PdfResult.FromHtml(html, ThemePresets.SaaSAnalytics));</code></pre>
+                </div>
+                <div class="widget-card">
+                    <h3>🚀 Razor View Rendering</h3>
+                    <p>Transform standard Razor templates and HTML string fragments directly into themed PDF vector documents.</p>
+                    <pre class="step-code"><code style="color: #38bdf8;">var doc = Document.FromHtml(razorString)
+    .WithTheme(ThemePresets.ExecutiveMinimal);</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QA & 316 Unit Test Suite Matrix Section -->
+    <section id="qa-matrix" class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">🧪 Quality Assurance</span>
+                <h2 class="section-title">316 Automated Unit Tests — 100% Passed</h2>
+                <p class="section-subtitle">Rigorous test coverage across layout math, color models, HTML tag parsing, and cryptographic security.</p>
+            </div>
+
+            <div class="qa-grid">
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">📄 Document & Fluent API</span>
+                        <span class="qa-count-badge">74 Passed</span>
+                    </div>
+                    <p class="qa-desc">Page sizes (A4–B5), margins, themes, text elements, font scaling.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">📊 Visual Widgets</span>
+                        <span class="qa-count-badge">51 Passed</span>
+                    </div>
+                    <p class="qa-desc">KPI Stat Cards, DataGrid pagination, status badges, stress tests.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">📐 Layout & Budgeter</span>
+                        <span class="qa-count-badge">44 Passed</span>
+                    </div>
+                    <p class="qa-desc">Page budgeting, orphan squeeze algorithm, height measurement.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">🎨 Color & Theme Engine</span>
+                        <span class="qa-count-badge">40 Passed</span>
+                    </div>
+                    <p class="qa-desc">Hex formats (#abc, #rrggbb, #aarrggbb), RGB, RGBA, themes.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">🤖 Markdown Ingestion</span>
+                        <span class="qa-count-badge">40 Passed</span>
+                    </div>
+                    <p class="qa-desc">Headers h1–h6, blockquotes, tables, bullet lists, formatting tags.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">🌐 ASP.NET Core & HTML</span>
+                        <span class="qa-count-badge">33 Passed</span>
+                    </div>
+                    <p class="qa-desc">HTML tag parsing, inline CSS styles, Razor views, PdfResult.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">🛡️ Licensing & Security</span>
+                        <span class="qa-count-badge">19 Passed</span>
+                    </div>
+                    <p class="qa-desc">HMAC-SHA256 signatures, RSA keys, tier capabilities, watermarks.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+
+                <div class="qa-card">
+                    <div class="qa-header">
+                        <span class="qa-icon-title">🧠 AI / RAG Dual-Stream</span>
+                        <span class="qa-count-badge">15 Passed</span>
+                    </div>
+                    <p class="qa-desc">JSON AST serialization, metadata stream injection, round-trip checks.</p>
+                    <div class="qa-status-row"><span>STATUS: VERIFIED</span><span>100% COVERAGE</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Widgets Section -->
+    <section id="widgets" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">📊 Component Library</span>
+                <h2 class="section-title">Out-of-the-Box Visual Widgets</h2>
+                <p class="section-subtitle">Vector sparklines, status badges, KPI stat cards, and barcodes rendered with precision.</p>
+            </div>
+
+            <div class="widgets-grid">
+                <div class="widget-card">
+                    <h3>📈 Vector Sparklines & Charts</h3>
+                    <p>High-density inline trend charts resolution-independent in vector PDF format.</p>
+                    <div class="sparkline-demo">
+                        <div class="sparkbar" style="height: 40%;"></div>
+                        <div class="sparkbar" style="height: 65%;"></div>
+                        <div class="sparkbar" style="height: 45%;"></div>
+                        <div class="sparkbar" style="height: 90%;"></div>
+                        <div class="sparkbar" style="height: 75%;"></div>
+                        <div class="sparkbar" style="height: 100%;"></div>
+                    </div>
+                </div>
+                <div class="widget-card">
+                    <h3>🏷️ Native Barcodes & QR Codes</h3>
+                    <p>Code128, EAN-13, and QR Code vector generation without third-party graphics plugins.</p>
+                    <div class="feature-tag" style="align-self: flex-start;">Vector Native</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Interactive Visual Playground Section -->
@@ -183,6 +344,7 @@
                         <label class="control-label">1. Select Ingestion Source</label>
                         <div class="segmented-control" id="sourceTabs">
                             <button class="seg-btn active" data-source="markdown">Markdown (LLM)</button>
+                            <button class="seg-btn" data-source="html">HTML / Razor</button>
                             <button class="seg-btn" data-source="csharp">C# Fluent DSL</button>
                             <button class="seg-btn" data-source="json">JSON Payload</button>
                         </div>
