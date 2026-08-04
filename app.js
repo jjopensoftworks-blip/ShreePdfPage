@@ -3,7 +3,7 @@
  * ShreePdf Engine - Radiant Aesthetics and Intelligent PDF Engineering for .NET
  */
 
-// ShreePdf Interactive Playground Application Logic (v1.3.0 Engine Release)
+// ShreePdf Interactive Playground Application Logic (v1.6.0 Engine Release)
 document.addEventListener('DOMContentLoaded', () => {
     let currentSource = 'markdown';
     let currentTheme = 'glassdark';
@@ -185,14 +185,14 @@ byte[] pdfBytes = doc.GenerateBytes();`,
 
         // Update RAG JSON Inspector
         const ragAstObj = {
-            EngineVersion: "1.3.0",
+            EngineVersion: "1.6.0",
             TargetFramework: ".NET 9.0 | Standard 2.0",
             Title: tpl.title,
-            Author: "ShreePdf Engine v1.3.0",
+            Author: "ShreePdf Engine v1.6.0",
             CreatedAtUtc: new Date().toISOString(),
             IsAutoFitApplied: isAutoFit,
             IsRagStreamActive: isRagEnabled,
-            TestSuiteCoverage: "316 Passing Unit Tests (100%)",
+            TestSuiteCoverage: "379 Passing Unit Tests (100%)",
             Nodes: [
                 { Type: "Header", Content: tpl.title },
                 { Type: "Blockquote", Content: tpl.quote },
