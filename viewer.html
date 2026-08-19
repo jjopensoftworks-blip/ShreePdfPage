@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShreePdf Viewer — Native Standalone Desktop PDF Reader & Analyzer</title>
+    <meta name="description" content="ShreePdf Viewer - State-of-the-Art standalone vector PDF desktop application for Windows. Ultra-fast sub-10ms vector rendering, digital signature inspection, and side-by-side visual diffing.">
+    <link rel="icon" type="image/png" href="viewer_icon.png">
+
+    <!-- Anti-AI Scraping & Privacy Directives -->
+    <meta name="robots" content="index, follow, noai, noimageai">
+    <meta name="tdm-reservation" content="1">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=1.14.0">
+
+    <style>
+        :root {
+            --bg-main: #0b0e14;
+            --bg-card: #111726;
+            --bg-card-hover: #162035;
+            --border-color: #1e293b;
+            --border-highlight: #38bdf8;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-indigo: #6366f1;
+            --accent-purple: #a855f7;
+            --accent-emerald: #10b981;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Top Header Navbar */
+        .viewer-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(15, 20, 28, 0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .nav-brand img {
+            height: 38px;
+            width: 38px;
+            border-radius: 8px;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+        }
+
+        .brand-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-store-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+            color: #ffffff;
+            padding: 0.55rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-store-nav:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+        }
+
+        /* Hero Section */
+        .viewer-hero {
+            padding: 140px 1.5rem 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .gradient-headline {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .store-badge-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+        }
+
+        .btn-ms-store {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            background: #0078d4;
+            color: #ffffff;
+            padding: 0.85rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            box-shadow: 0 10px 28px rgba(0, 120, 212, 0.4);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-ms-store:hover {
+            background: #0086f0;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(0, 120, 212, 0.6);
+        }
+
+        .btn-ms-store i {
+            font-size: 1.4rem;
+        }
+
+        .trust-badge-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .trust-item i {
+            color: var(--accent-emerald);
+        }
+
+        /* Showcase Preview Frame */
+        .showcase-wrapper {
+            max-width: 1100px;
+            margin: 0 auto 5rem;
+            padding: 0 1rem;
+        }
+
+        .preview-window {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.15);
+        }
+
+        .window-bar {
+            background: #0f172a;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .window-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .window-actions {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .main-screenshot-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        /* Screenshot Switcher Tabs */
+        .gallery-tabs {
+            display: flex;
+            background: #0b101b;
+            padding: 0.75rem 1rem;
+            gap: 0.75rem;
+            overflow-x: auto;
+            justify-content: center;
+        }
+
+        .gallery-tab {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #162035;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.15rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .gallery-tab.active {
+            background: #1e293b;
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+        }
+
+        .gallery-tab:hover:not(.active) {
+            background: #1f2d47;
+            color: #ffffff;
+        }
+
+        /* Bento Features Grid */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            background: var(--bg-card-hover);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .icon-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+        .icon-indigo { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+        .icon-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+        .icon-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .icon-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.925rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            background: #1e293b;
+            color: #cbd5e1;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Comparison Table Section */
+        .comparison-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow-x: auto;
+            margin-bottom: 6rem;
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .comp-table th, .comp-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comp-table th {
+            background: #0f141c;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .highlight-col {
+            background: rgba(56, 189, 248, 0.05);
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Store CTA Banner */
+        .store-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            border: 1px solid #312e81;
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 6rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .store-banner-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .store-banner-desc {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Footer */
+        .viewer-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            background: #090c10;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .nav-menu { display: none; }
+            .gallery-tabs { justify-content: flex-start; }
+            .trust-badge-row { flex-direction: column; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="viewer-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="viewer_icon.png" alt="ShreePdf Viewer App Icon">
+            <span class="brand-text">ShreePdf <span style="color: var(--accent-blue);">Viewer</span></span>
+        </a>
+
+        <nav class="nav-menu">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#screenshots" class="nav-link">Screenshots</a>
+            <a href="#comparison" class="nav-link">Comparison</a>
+            <a href="Viewer/PrivacyPolicy.html" class="nav-link">Privacy Policy</a>
+            <a href="Viewer/Support.html" class="nav-link">Support</a>
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Engine Home</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="https://apps.microsoft.com/detail/9N7H1S364Z08" target="_blank" class="btn-store-nav">
+                <i class="fa-brands fa-windows"></i> Get on Microsoft Store
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="viewer-hero">
+        <div class="hero-pill">
+            <i class="fa-solid fa-bolt"></i> Sub-10ms Vector Engine · Standalone Desktop App
+        </div>
+
+        <h1 class="hero-title">
+            The Native, Ultra-Fast<br>
+            <span class="gradient-headline">PDF Desktop Viewer &amp; Analyzer</span>
+        </h1>
+
+        <p class="hero-desc">
+            Experience blazing-fast vector PDF rendering powered by SkiaSharp. 100% offline privacy, zero browser bloat, cryptographic digital signature inspection, and visual side-by-side document diffing.
+        </p>
+
+        <div class="store-badge-container">
+            <a href="https://apps.microsoft.com/detail/9N7H1S364Z08" target="_blank" class="btn-ms-store">
+                <i class="fa-brands fa-microsoft"></i>
+                <div style="text-align: left; line-height: 1.2;">
+                    <div style="font-size: 0.75rem; font-weight: 500; opacity: 0.9; text-transform: uppercase;">Get it from</div>
+                    <div>Microsoft Store</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="trust-badge-row">
+            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Microsoft Store Verified Safe</div>
+            <div class="trust-item"><i class="fa-solid fa-lock"></i> 100% Offline &amp; Private</div>
+            <div class="trust-item"><i class="fa-solid fa-feather"></i> Lightweight (~35 MB RAM)</div>
+            <div class="trust-item"><i class="fa-solid fa-arrows-rotate"></i> Automatic Silent Updates</div>
+        </div>
+    </section>
+
+    <!-- App Showcase Gallery Frame -->
+    <section id="screenshots" class="showcase-wrapper">
+        <div class="preview-window">
+            <div class="window-bar">
+                <div class="window-dots">
+                    <span class="window-dot dot-red"></span>
+                    <span class="window-dot dot-yellow"></span>
+                    <span class="window-dot dot-green"></span>
+                </div>
+                <div class="window-title" id="activeScreenTitle">ShreePdfViewer.App — High-DPI Vector Document Workspace</div>
+                <div class="window-actions"><i class="fa-solid fa-desktop"></i> Desktop Client</div>
+            </div>
+
+            <!-- Main Interactive Display Image -->
+            <img id="mainAppImg" src="Viewer/store_assets/screenshot_1_1920x1080.png" alt="ShreePdf Viewer App Screenshot" class="main-screenshot-img">
+
+            <!-- Interactive Tab Switcher -->
+            <div class="gallery-tabs">
+                <button class="gallery-tab active" onclick="switchScreenshot(1, 'Viewer/store_assets/screenshot_1_1920x1080.png', 'Document Workspace &amp; Navigation Sidebar')">
+                    <i class="fa-regular fa-file-pdf"></i> Workspace &amp; Thumbnails
+                </button>
+                <button class="gallery-tab" onclick="switchScreenshot(2, 'Viewer/store_assets/screenshot_2_1920x1080.png', 'PKCS#12 Digital Signature &amp; Certificate Inspector')">
+                    <i class="fa-solid fa-signature"></i> Signature Inspector
+                </button>
+                <button class="gallery-tab" onclick="switchScreenshot(3, 'Viewer/store_assets/screenshot_3_1920x1080.png', 'Side-by-Side Visual Diff &amp; Delta Compare')">
+                    <i class="fa-solid fa-code-compare"></i> Visual Diff Compare
+                </button>
+                <button class="gallery-tab" onclick="switchScreenshot(4, 'Viewer/store_assets/screenshot_4_1920x1080.png', 'Document Slicer, Page Splitting &amp; Organizer')">
+                    <i class="fa-solid fa-layer-group"></i> Page Organizer
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Features Grid -->
+    <section id="features" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Engineered for Precision &amp; Speed</h2>
+            <p class="section-subtitle">Everything you need for mission-critical PDF analysis, compliance verification, and reading without bloated cloud subscriptions.</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-blue">
+                    <i class="fa-solid fa-signature"></i>
+                </div>
+                <h3>Digital Signature Inspector</h3>
+                <p>Verify PKCS#12 (.pfx / .p12) cryptographic signatures, certificate validation chains, RFC 3161 TSA timestamp authorities, and visible approval seals directly.</p>
+                <span class="feature-badge">v1.12 Engine</span>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-emerald">
+                    <i class="fa-solid fa-code-compare"></i>
+                </div>
+                <h3>Side-by-Side Visual Diff</h3>
+                <p>Compare two versions of any document with automatic pixel-level delta highlighting, page layout shift detection, and structural modification inspect.</p>
+                <span class="feature-badge">Visual Inspection</span>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-indigo">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3>Page Slicer &amp; Organizer</h3>
+                <p>Visually reorder pages, extract arbitrary sub-ranges into standalone files, merge documents in-memory, and apply letterhead/header stamps.</p>
+                <span class="feature-badge">v1.14 Feature</span>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-purple">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3>Instant Full-Text Search</h3>
+                <p>Search across hundreds of pages in milliseconds with regex matching, instant highlighted hits, and interactive document outline hierarchy navigation.</p>
+                <span class="feature-badge">PDFium Powered</span>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-amber">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>100% Offline &amp; Private</h3>
+                <p>No telemetry, no tracking, and zero cloud uploads. Your confidential legal, financial, and healthcare documents remain exclusively on your local hardware.</p>
+                <span class="feature-badge">Zero Telemetry</span>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card">
+                <div class="feature-icon-box icon-rose">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h3>Sub-10ms Native Rendering</h3>
+                <p>Bypasses heavy Chromium browser wrappers. GPU-accelerated SkiaSharp rendering guarantees silky smooth 60fps scrolling and instant multi-page zooming.</p>
+                <span class="feature-badge">Hardware Accelerated</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Matrix -->
+    <section id="comparison" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">How ShreePdf Viewer Compares</h2>
+            <p class="section-subtitle">A clean native alternative to bulky commercial software and slow web readers.</p>
+        </div>
+
+        <div class="comparison-wrapper">
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Feature / Metric</th>
+                        <th class="highlight-col">⚡ ShreePdf Viewer</th>
+                        <th>Adobe Acrobat Reader</th>
+                        <th>Web / Browser Viewers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Startup Latency</strong></td>
+                        <td class="highlight-col">&lt; 100 ms (Instant)</td>
+                        <td>2.5 – 4.0 seconds</td>
+                        <td>1.0 – 2.0 seconds</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory Footprint</strong></td>
+                        <td class="highlight-col">~35 MB (Lightweight)</td>
+                        <td>350 MB – 600 MB+</td>
+                        <td>400 MB – 900 MB+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital Signature Inspector</strong></td>
+                        <td class="highlight-col">✅ Full Details Included</td>
+                        <td>⚠️ Paid Acrobat Pro Required</td>
+                        <td>❌ Not Supported</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Side-by-Side Visual Diff</strong></td>
+                        <td class="highlight-col">✅ Built-in Visual Engine</td>
+                        <td>⚠️ $239/yr Subscription</td>
+                        <td>❌ Not Available</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Offline Privacy</strong></td>
+                        <td class="highlight-col">✅ 100% Offline (No Telemetry)</td>
+                        <td>⚠️ Cloud Account Prompts</td>
+                        <td>⚠️ Cloud Sync Dependent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Distribution</strong></td>
+                        <td class="highlight-col">✅ Microsoft Store Verified</td>
+                        <td>Standalone Installer + Services</td>
+                        <td>Browser Extension</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Microsoft Store Download CTA Banner -->
+    <div class="store-banner">
+        <h2 class="store-banner-title">Ready for a Better PDF Experience?</h2>
+        <p class="store-banner-desc">
+            Download ShreePdf Viewer safely from the official Microsoft Store. Zero installation bloat, automatic updates, and sandboxed security.
+        </p>
+
+        <a href="https://apps.microsoft.com/detail/9N7H1S364Z08" target="_blank" class="btn-ms-store">
+            <i class="fa-brands fa-microsoft"></i>
+            <div style="text-align: left; line-height: 1.2;">
+                <div style="font-size: 0.75rem; font-weight: 500; opacity: 0.9; text-transform: uppercase;">Get it from</div>
+                <div>Microsoft Store</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="viewer-footer">
+        <div class="footer-links">
+            <a href="index.html">ShreePdf Engine</a>
+            <a href="Viewer/PrivacyPolicy.html">Privacy Policy</a>
+            <a href="Viewer/Support.html">Customer Support</a>
+            <a href="migration.html">Migration Guide</a>
+            <a href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank">GitHub Repository</a>
+            <a href="https://www.nuget.org/packages/ShreePdf" target="_blank">NuGet Package</a>
+        </div>
+        <p>© 2026 jjopensoftworks-blip. All rights reserved. ShreePdf and ShreePdf Viewer are trademarks of jjopensoftworks-blip.</p>
+    </footer>
+
+    <!-- Script for Interactive Gallery Switching -->
+    <script>
+        function switchScreenshot(index, src, title) {
+            const img = document.getElementById('mainAppImg');
+            const titleEl = document.getElementById('activeScreenTitle');
+            const tabs = document.querySelectorAll('.gallery-tab');
+
+            img.src = src;
+            titleEl.textContent = 'ShreePdfViewer.App — ' + title;
+
+            tabs.forEach((tab, i) => {
+                if (i === (index - 1)) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

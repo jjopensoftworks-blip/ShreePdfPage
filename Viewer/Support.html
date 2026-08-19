@@ -1,0 +1,169 @@
+<!--
+  Copyright (c) 2026 Jjopensoftworks. All rights reserved.
+-->
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support &amp; Help Center — ShreePdf Viewer</title>
+<meta name="description" content="Support and Help Center for ShreePdf Viewer desktop app and web reader. FAQs, GitHub issues, and developer contact."/>
+<meta property="og:title" content="Support &amp; Help Center — ShreePdf Viewer"/>
+<meta property="og:description" content="Get help, FAQs, bug reporting, and developer support for ShreePdf Viewer."/>
+<link rel="icon" type="image/png" href="../viewer_icon.png">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#0b1326",
+                    "surface-container-highest": "#2d3449",
+                    "surface-variant": "#2d3449",
+                    "electric-blue": "#38BDF8",
+                    "surface-container-high": "#222a3d",
+                    "on-surface": "#dae2fd",
+                    "secondary-container": "#00a572",
+                    "secondary": "#4edea3",
+                    "primary": "#adc6ff",
+                    "error-red": "#EF4444",
+                    "surface-deep": "#0b0e14",
+                    "tertiary": "#ffb95f",
+                    "surface-dim": "#0b1326",
+                    "warning-amber": "#D97706",
+                    "primary-container": "#4f46e5",
+                    "surface-border": "#1E293B",
+                    "background": "#0b1326",
+                    "surface-container": "#0f141c",
+                    "on-primary-container": "#ffffff",
+                    "on-surface-variant": "#c2c6d6",
+                    "text-muted": "#94A3B8"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "code-md": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bento-card { border: 1px solid #1E293B; background-color: #0F172A; }
+    </style>
+</head>
+<body class="bg-surface-deep text-on-surface font-body-md selection:bg-electric-blue/30 selection:text-white">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container border-b border-surface-border px-6 h-16 flex justify-between items-center max-w-full">
+<a href="../index.html" class="flex items-center gap-3">
+<img src="../viewer_icon.png" alt="ShreePdf Viewer Icon" class="h-9 w-9 rounded-lg">
+<span class="font-headline-md text-xl font-bold text-on-surface">ShreePdf <span class="text-electric-blue">Viewer</span></span>
+</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="../index.html">Engine Home</a>
+<a class="font-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="../viewer.html">Web Viewer</a>
+<a class="font-body-md text-text-muted hover:text-on-surface transition-colors duration-200" href="PrivacyPolicy.html">Privacy Policy</a>
+<a class="font-body-md text-electric-blue border-b-2 border-electric-blue pb-1 hover:text-on-surface transition-colors duration-200" href="Support.html">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="../download.html" class="hidden lg:flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-sm active:opacity-80 transition-all font-semibold shadow-lg shadow-indigo-600/30">
+<span class="material-symbols-outlined text-[18px]">download</span>
+Get App
+</a>
+</div>
+</header>
+
+<!-- Main Content Canvas -->
+<main class="mt-20 p-6 max-w-4xl mx-auto mb-16">
+<div class="mb-10 text-center">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric-blue/10 text-electric-blue font-label-sm text-xs mb-4 border border-electric-blue/30">
+<span class="material-symbols-outlined text-[16px]">help</span> HELP &amp; SUPPORT CENTER
+</span>
+<h1 class="font-headline-lg text-4xl md:text-5xl font-extrabold mb-3 tracking-tight">How can we help you?</h1>
+<p class="font-body-md text-text-muted max-w-xl mx-auto">Find answers to common questions, reporting instructions for issues, or contact developer support directly.</p>
+</div>
+
+<!-- Support Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <!-- Card 1: GitHub Tracker -->
+    <div class="bento-card rounded-xl p-6 flex flex-col justify-between shadow-xl border-l-4 border-l-electric-blue">
+        <div>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-electric-blue text-[32px]">bug_report</span>
+                <h2 class="font-headline-md text-xl font-bold text-on-surface">Report an Issue or Bug</h2>
+            </div>
+            <p class="text-text-muted text-sm leading-relaxed mb-4">Found a bug or rendering issue in a specific PDF? Report it directly on our official open-source GitHub repository issue tracker.</p>
+        </div>
+        <a href="https://github.com/jjopensoftworks-blip/ShreePdf/issues" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-electric-blue font-semibold hover:underline text-sm">
+            Open GitHub Issue Tracker <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+        </a>
+    </div>
+
+    <!-- Card 2: Email Support -->
+    <div class="bento-card rounded-xl p-6 flex flex-col justify-between shadow-xl border-l-4 border-l-secondary">
+        <div>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-secondary text-[32px]">mail</span>
+                <h2 class="font-headline-md text-xl font-bold text-on-surface">Direct Email Support</h2>
+            </div>
+            <p class="text-text-muted text-sm leading-relaxed mb-4">Need help with Microsoft Store installation, licensing, or commercial distribution? Contact developer support directly via email.</p>
+        </div>
+        <a href="mailto:jjopensoftworks@gmail.com" class="inline-flex items-center gap-2 text-secondary font-semibold hover:underline text-sm">
+            jjopensoftworks@gmail.com <span class="material-symbols-outlined text-[16px]">send</span>
+        </a>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="bento-card rounded-xl p-6 md:p-8 shadow-xl mb-12">
+    <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-6 flex items-center gap-3">
+        <span class="material-symbols-outlined text-electric-blue">quiz</span> Frequently Asked Questions
+    </h2>
+
+    <div class="space-y-6 text-sm">
+        <div class="border-b border-surface-border pb-4">
+            <h3 class="font-semibold text-base text-on-surface mb-2">Q: Does ShreePdf Viewer collect any of my PDF data?</h3>
+            <p class="text-text-muted leading-relaxed">No. ShreePdf Viewer is 100% offline and private. It collects zero analytics, zero telemetry, and never uploads your files to any server.</p>
+        </div>
+
+        <div class="border-b border-surface-border pb-4">
+            <h3 class="font-semibold text-base text-on-surface mb-2">Q: What Windows versions are supported?</h3>
+            <p class="text-text-muted leading-relaxed">ShreePdf Viewer supports Windows 10 and Windows 11 on both 64-bit (x64) and ARM64 devices.</p>
+        </div>
+
+        <div class="border-b border-surface-border pb-4">
+            <h3 class="font-semibold text-base text-on-surface mb-2">Q: How do I open PDF files in ShreePdf Viewer?</h3>
+            <p class="text-text-muted leading-relaxed">You can drag and drop any PDF file directly into the ShreePdf Viewer window, or click the "📂 Open PDF" button in the top toolbar.</p>
+        </div>
+
+        <div>
+            <h3 class="font-semibold text-base text-on-surface mb-2">Q: How do I request new features or vector rendering improvements?</h3>
+            <p class="text-text-muted leading-relaxed">You can submit feature requests on our <a class="text-electric-blue hover:underline" href="https://github.com/jjopensoftworks-blip/ShreePdf/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+        </div>
+    </div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-surface-container border-t border-surface-border flex flex-col md:flex-row justify-between items-center px-8 py-8">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<div class="flex items-center gap-2">
+<img src="../viewer_icon.png" alt="ShreePdf Viewer Icon" class="h-6 w-6 rounded">
+<p class="font-headline-md text-lg font-bold text-on-surface">ShreePdf Viewer</p>
+</div>
+<p class="font-body-md text-sm text-text-muted">© 2026 Jjopensoftworks. Standalone Desktop &amp; Web Vector PDF Reader.</p>
+</div>
+<div class="flex flex-wrap gap-8 text-sm">
+<a class="text-text-muted hover:text-on-surface transition-colors" href="../index.html">Engine Home</a>
+<a class="text-text-muted hover:text-on-surface transition-colors" href="PrivacyPolicy.html">Privacy Policy</a>
+<a class="text-text-muted hover:text-on-surface transition-colors" href="Support.html">Support</a>
+<a class="text-text-muted hover:text-on-surface transition-colors" href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank" rel="noopener">GitHub Repository</a>
+</div>
+</footer>
+
+</body>
+</html>
