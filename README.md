@@ -1,16 +1,16 @@
-<div align="center">
+﻿<div align="center">
 
 <img src="logo.png" width="360" alt="ShreePdf Engine Logo"><br><br>
 
-# 🌐 ShreePdf Showcase & Visual Playground
+# ðŸŒ ShreePdf Showcase & Visual Playground
 
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Playground-brightgreen?style=for-the-badge&logo=github)](https://jjopensoftworks-blip.github.io/ShreePdfPage)
-[![NuGet Package](https://img.shields.io/badge/NuGet-v1.16.0-004880?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
+[![NuGet Package](https://img.shields.io/badge/NuGet-v1.17.0-004880?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ShreePdf?style=for-the-badge&logo=nuget&color=10b981&label=Downloads)](https://www.nuget.org/packages/ShreePdf)
-[![Release](https://img.shields.io/badge/Release-v1.16.0%20Latest-brightgreen?style=for-the-badge&logo=nuget)](https://github.com/jjopensoftworks-blip/ShreePdf/releases)
-[![Core Repo](https://img.shields.io/badge/Core%20Engine-ShreePdf.git-512BD4?style=for-the-badge&logo=dotnet)](https://github.com/jjopensoftworks-blip/ShreePdf)
+[![Release](https://img.shields.io/badge/Release-v1.17.0%20Latest-brightgreen?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
+[![Core Repo](https://img.shields.io/badge/Core%20Engine-ShreePdf.git-512BD4?style=for-the-badge&logo=dotnet)](https://github.com/jjopensoftworks-blip/ShreePdfPage)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 *This repository contains the interactive web playground, design system showcase, documentation, public release changelog, and live PDF canvas simulator for the **ShreePdf Engine**.*
@@ -19,23 +19,23 @@
 
 </div>
 
-## ✨ What's Included
+## âœ¨ What's Included
 
-- 🚀 **[`MIGRATION.md`](MIGRATION.md)**: Developer migration guide with side-by-side code conversion examples for **QuestPDF**, **iText 7**, **PuppeteerSharp**, **IronPDF**, and **SelectPdf**.
-- 📄 **`index.html`**: Semantic HTML5 web application structure with interactive playground controls, design theme switcher, and competitive market comparison.
-- 🎨 **`style.css`**: HSL design system tokens, dark glassmorphism, ambient vector glow, custom scrollbars, and micro-animations.
-- ⚡ **`app.js`**: Interactive state engine simulating multi-source ingestion (Markdown, C# DSL, JSON), theme switching, anti-orphan auto-fit budgeting, and RAG AST metadata inspection.
+- ðŸš€ **[`migration.html`](migration.html)**: Developer migration guide with side-by-side code conversion examples for **QuestPDF**, **iText 7**, **PuppeteerSharp**, **IronPDF**, and **SelectPdf**.
+- ðŸ“„ **`index.html`**: Semantic HTML5 web application structure with interactive playground controls, design theme switcher, and competitive market comparison.
+- ðŸŽ¨ **`style.css`**: HSL design system tokens, dark glassmorphism, ambient vector glow, custom scrollbars, and micro-animations.
+- âš¡ **`app.js`**: Interactive state engine simulating multi-source ingestion (Markdown, C# DSL, JSON), theme switching, anti-orphan auto-fit budgeting, and RAG Metadata metadata inspection.
 
 ---
 
-## 🚀 Live Demo
+## ðŸš€ Live Demo
 
 Experience the interactive playground live on GitHub Pages:
 **[https://jjopensoftworks-blip.github.io/ShreePdfPage](https://jjopensoftworks-blip.github.io/ShreePdfPage)**
 
 ---
 
-## 🛠️ Local Development
+## ðŸ› ï¸ Local Development
 
 To run the showcase website locally:
 
@@ -56,6 +56,6 @@ Then open `http://localhost:8080` in your browser.
 
 <div align="center">
 
-Maintained with ❤️ by **[jjopensoftworks-blip](https://github.com/jjopensoftworks-blip)**
+Maintained with â¤ï¸ by **[jjopensoftworks-blip](https://github.com/jjopensoftworks-blip)**
 
 </div>
