@@ -7,9 +7,9 @@
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Playground-brightgreen?style=for-the-badge&logo=github)](https://jjopensoftworks-blip.github.io/ShreePdfPage)
-[![NuGet Package](https://img.shields.io/badge/NuGet-v1.17.0-004880?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
+[![NuGet Package](https://img.shields.io/badge/NuGet-v1.18.0-004880?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/ShreePdf?style=for-the-badge&logo=nuget&color=10b981&label=Downloads)](https://www.nuget.org/packages/ShreePdf)
-[![Release](https://img.shields.io/badge/Release-v1.17.0%20Latest-brightgreen?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
+[![Release](https://img.shields.io/badge/Release-v1.18.0%20Latest-brightgreen?style=for-the-badge&logo=nuget)](https://www.nuget.org/packages/ShreePdf)
 [![Core Repo](https://img.shields.io/badge/Core%20Engine-ShreePdf.git-512BD4?style=for-the-badge&logo=dotnet)](https://github.com/jjopensoftworks-blip/ShreePdfPage)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
