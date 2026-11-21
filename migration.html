@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShreePdf Engine — Migration Guide & Feature Reference</title>
+    <title>ShreePdf Engine â€” Migration Guide & Feature Reference</title>
     <meta name="description" content="Comprehensive migration guide and code conversion reference for transitioning from QuestPDF, iText 7, PuppeteerSharp, IronPDF, and SelectPdf to ShreePdf Engine.">
 
     <!-- Google Fonts -->
@@ -282,9 +282,9 @@
             </nav>
             <div class="nav-actions">
                 <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn btn-secondary">
-                    <i class="fa-solid fa-box-open"></i> NuGet v1.16.0
+                    <i class="fa-solid fa-box-open"></i> NuGet v1.17.0
                 </a>
-                <a href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank" class="btn btn-primary">
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
@@ -304,17 +304,46 @@
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="#questpdf" class="sidebar-nav-link">
-                        <i class="fa-solid fa-file-code"></i> QuestPDF ➔ ShreePdf
+                        <i class="fa-solid fa-file-code"></i> QuestPDF âž” ShreePdf
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="#itext" class="sidebar-nav-link">
-                        <i class="fa-solid fa-cubes"></i> iText 7 ➔ ShreePdf
+                        <i class="fa-solid fa-cubes"></i> iText 7 âž” ShreePdf
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="#chromium" class="sidebar-nav-link">
                         <i class="fa-brands fa-chrome"></i> Chromium / IronPDF
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-section-title"><i class="fa-solid fa-scale-balanced"></i> Competitor Deep-Dives</div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="questpdf-alternative.html" class="sidebar-nav-link">
+                        <i class="fa-solid fa-bolt"></i> QuestPDF vs ShreePdf
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="ironpdf-alternative.html" class="sidebar-nav-link">
+                        <i class="fa-solid fa-microchip"></i> IronPDF Alternative
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="puppeteer-sharp-alternative.html" class="sidebar-nav-link">
+                        <i class="fa-brands fa-docker"></i> PuppeteerSharp vs ShreePdf
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="itext-alternative.html" class="sidebar-nav-link">
+                        <i class="fa-solid fa-cubes"></i> iText 7 Alternative
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="selectpdf-alternative.html" class="sidebar-nav-link">
+                        <i class="fa-solid fa-server"></i> SelectPdf / wkhtmltopdf
                     </a>
                 </li>
             </ul>
@@ -338,7 +367,7 @@
                 </li>
                 <li class="sidebar-nav-item">
                     <a href="#rag" class="sidebar-nav-link">
-                        <i class="fa-solid fa-brain"></i> AI / RAG XMP AST
+                        <i class="fa-solid fa-brain"></i> AI / RAG Archival Metadata Structured Metadata
                     </a>
                 </li>
             </ul>
@@ -366,26 +395,26 @@
                     <tbody>
                         <tr>
                             <td><strong>Code Verbosity</strong></td>
-                            <td>50 – 120 lines / page</td>
-                            <td><span class="metric-pill success">5 – 15 lines / page</span></td>
+                            <td>50 â€“ 120 lines / page</td>
+                            <td><span class="metric-pill success">5 â€“ 15 lines / page</span></td>
                             <td><strong>80% less boilerplate code</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Execution Speed</strong></td>
-                            <td>1,500 – 4,000 ms (Chromium)</td>
-                            <td><span class="metric-pill success">5 – 15 ms / page</span></td>
+                            <td>1,500 â€“ 4,000 ms (Chromium)</td>
+                            <td><span class="metric-pill success">5 â€“ 15 ms / page</span></td>
                             <td><strong>250x faster PDF rendering</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Memory Footprint</strong></td>
-                            <td>400 – 800 MB RAM</td>
+                            <td>400 â€“ 800 MB RAM</td>
                             <td><span class="metric-pill success">~15 MB RAM</span></td>
                             <td><strong>Zero cold-start timeouts</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Native Dependencies</strong></td>
                             <td>200MB+ Headless Chrome / WebKit</td>
-                            <td><span class="metric-pill success">0 (Pure C# SkiaSharp)</span></td>
+                            <td><span class="metric-pill success">0 (Pure Managed .NET Vector Engine)</span></td>
                             <td><strong>100% Cross-Platform (Docker/Linux)</strong></td>
                         </tr>
                     </tbody>
@@ -544,7 +573,7 @@ doc.Save("report.pdf");</div>
                 <div class="code-box">
                     <div class="code-header after">
                         <span><i class="fa-solid fa-sparkles"></i> Master-Detail Group Builder</span>
-                        <span class="metric-pill success">v1.14.0 Engine</span>
+                        <span class="metric-pill success">v1.17.0 Engine</span>
                     </div>
                     <div class="code-body">var doc = Document.Create("Legal Case Report")
     .AddMasterDetailGroup(group => {
@@ -610,20 +639,20 @@ byte[] pdfBytes = doc.GenerateBytes();</div>
                 </div>
             </section>
 
-            <!-- Section 8: AI / RAG AST -->
+            <!-- Section 8: AI / RAG Metadata -->
             <section id="rag" class="doc-section">
                 <div class="doc-header">
-                    <h2><i class="fa-solid fa-brain"></i> AI / RAG Dual-Stream AST Embedder</h2>
-                    <p>Embed loss-free JSON AST metadata directly inside the PDF XMP stream for zero-loss LLM retrieval.</p>
+                    <h2><i class="fa-solid fa-brain"></i> AI / RAG Dual-Stream Structured Metadata Embedder</h2>
+                    <p>Embed loss-free AI/RAG Metadata metadata directly inside the PDF document metadata for zero-loss LLM retrieval.</p>
                 </div>
 
                 <div class="code-box">
                     <div class="code-header after">
                         <span><i class="fa-solid fa-microchip"></i> Zero-Loss RAG Indexer</span>
-                        <span class="metric-pill success">XMP Dual-Stream</span>
+                        <span class="metric-pill success">AI Metadata Ready</span>
                     </div>
                     <div class="code-body">var doc = Document.Create("RAG Indexed Contract");
-doc.IsRagMetadataEnabled = true; // Embeds structured JSON AST payload in XMP stream
+doc.IsRagMetadataEnabled = true; // Embeds structured AI/RAG Metadata payload in document metadata
 
 doc.AddHeading("Services Agreement", level: 1)
    .AddText("This Agreement is made on 2026-08-15 between Party A and Party B.");

@@ -1,9 +1,9 @@
-/**
+﻿/**
  * Copyright (c) 2026 jjopensoftworks-blip. All rights reserved.
  * ShreePdf Engine - Radiant Aesthetics and Intelligent PDF Engineering for .NET
  */
 
-// ShreePdf Interactive Playground Application Logic (v1.14.0 Engine Release)
+// ShreePdf Interactive Playground Application Logic (v1.17.0 Engine Release)
 document.addEventListener('DOMContentLoaded', () => {
     let currentSource = 'markdown';
     let currentTheme = 'glassdark';
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const pdfBody = document.getElementById('pdfBody');
     const ragJsonCode = document.getElementById('ragJsonCode');
 
-    // Ingestion Templates for v1.14.0 (Markdown, C# DSL, JSON, HTML / Razor)
+    // Ingestion Templates for v1.17.0 (Markdown, C# DSL, JSON, HTML / Razor)
     const sourceTemplates = {
         markdown: {
-            title: '⚡ AI Performance Brief',
-            quote: '"Loss-free RAG indexing enabled. High-speed vector rendering via SkiaSharp."',
+            title: 'âš¡ AI Performance Brief',
+            quote: '"Loss-free RAG indexing enabled. High-speed vector rendering via the ShreePdf Vector Engine."',
             csharp: `// 1. Ingest LLM Markdown Output Directly
 string llmResponse = """
 # AI Performance Brief
@@ -41,8 +41,8 @@ var doc = Document.FromMarkdown(llmResponse, ThemePresets.GlassmorphicDark)
 
 doc.Save("AiPerformanceBrief.pdf");`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">⚡ AI Performance Brief</h1>
-                <p class="pdf-quote" id="pdfQuote">"Loss-free RAG indexing enabled. High-speed vector rendering via SkiaSharp."</p>
+                <h1 class="pdf-h1" id="pdfTitle">âš¡ AI Performance Brief</h1>
+                <p class="pdf-quote" id="pdfQuote">"Loss-free RAG indexing enabled. High-speed vector rendering via the ShreePdf Vector Engine."</p>
 
                 <div class="pdf-section-title">EXECUTIVE METRICS</div>
                 <table class="pdf-table" id="pdfTable">
@@ -65,7 +65,7 @@ doc.Save("AiPerformanceBrief.pdf");`,
                             <td><span class="tag tag-success">v1.8.0</span></td>
                         </tr>
                         <tr>
-                            <td>Native SkiaSharp Engine</td>
+                            <td>ShreePdf Native Vector Engine</td>
                             <td>15ms / 15MB Footprint</td>
                             <td><span class="tag tag-primary">OPTIMAL</span></td>
                         </tr>
@@ -74,16 +74,16 @@ doc.Save("AiPerformanceBrief.pdf");`,
             `
         },
         html: {
-            title: '🌐 Razor & HTML View Middleware',
-            quote: '"Zero-dependency HTML tag parsing (h1-h6, b, i, a, p, table, ul, li) directly into PDF AST."',
+            title: 'ðŸŒ Razor & HTML View Middleware',
+            quote: '"Zero-dependency HTML tag parsing (h1-h6, b, i, a, p, table, ul, li) directly into PDF Layout."',
             csharp: `// 2. ASP.NET Core Razor & HTML Middleware
 app.MapGet("/api/pdf/report", () => {
     string htmlContent = "<h1 style='color:#38bdf8;'>Executive Razor View</h1><p>Zero Chrome overhead.</p>";
     return PdfResult.FromHtml(htmlContent, ThemePresets.SaaSAnalytics);
 });`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle" style="color: var(--accent);">🌐 Razor & HTML View Middleware</h1>
-                <p class="pdf-quote" id="pdfQuote">"Zero-dependency HTML tag parsing directly into ShreePdf layout AST."</p>
+                <h1 class="pdf-h1" id="pdfTitle" style="color: var(--accent);">ðŸŒ Razor & HTML View Middleware</h1>
+                <p class="pdf-quote" id="pdfQuote">"Zero-dependency HTML tag parsing directly into ShreePdf document layout."</p>
 
                 <div class="pdf-section-title">ASP.NET CORE MINIMAL API</div>
                 <div class="pdf-container-box" style="border-left: 3px solid #38bdf8; background: rgba(56, 189, 248, 0.08);">
@@ -93,7 +93,7 @@ app.MapGet("/api/pdf/report", () => {
             `
         },
         csharp: {
-            title: '💼 Executive Dashboard & KPIs',
+            title: 'ðŸ’¼ Executive Dashboard & KPIs',
             quote: '"Fluent C# DSL for native vector charts, stat cards, barcodes, and multi-column flow."',
             csharp: `// 3. Direct C# Fluent API Construction (v1.8.0)
 var doc = Document.Create("Executive Dashboard")
@@ -109,7 +109,7 @@ var doc = Document.Create("Executive Dashboard")
     .AddQrCode("https://example.com/invoice/9901")
     .AddMultiColumn("ShreePdf balances text cleanly across columns.", columns: 2, height: 100);`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">💼 Executive Dashboard & KPIs</h1>
+                <h1 class="pdf-h1" id="pdfTitle">ðŸ’¼ Executive Dashboard & KPIs</h1>
                 <p class="pdf-quote" id="pdfQuote">"Fluent C# DSL for native vector charts, stat cards, barcodes, and multi-column flow."</p>
 
                 <table class="pdf-table">
@@ -125,7 +125,7 @@ var doc = Document.Create("Executive Dashboard")
             `
         },
         json: {
-            title: '📊 Quarterly Data Report',
+            title: 'ðŸ“Š Quarterly Data Report',
             quote: '"Data-bound payload serialized from JSON REST API response."',
             csharp: `// 4. JSON Payload Ingestion
 string jsonPayload = File.ReadAllText("report_payload.json");
@@ -136,7 +136,7 @@ var doc = Document.FromJson(jsonPayload, ThemePresets.GlassmorphicDark)
 
 byte[] pdfBytes = doc.GenerateBytes();`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">📊 Quarterly Data Report</h1>
+                <h1 class="pdf-h1" id="pdfTitle">ðŸ“Š Quarterly Data Report</h1>
                 <p class="pdf-quote" id="pdfQuote">"Data-bound payload serialized from JSON REST API response."</p>
 
                 <div class="pdf-container-box">
@@ -195,9 +195,9 @@ byte[] pdfBytes = doc.GenerateBytes();`,
         // Update RAG JSON Inspector
         const ragAstObj = {
             EngineVersion: "1.8.0",
-            TargetFramework: ".NET 8.0 | .NET 10.0 Dual Target",
+            TargetFramework: ".NET 8.0 | .NET 10.0 | .NET Standard 2.0",
             Title: tpl.title,
-            Author: "ShreePdf Engine v1.8.0",
+            Author: "ShreePdf Engine v1.17.0",
             CreatedAtUtc: new Date().toISOString(),
             IsAutoFitApplied: isAutoFit,
             IsRagStreamActive: isRagEnabled,
@@ -206,7 +206,7 @@ byte[] pdfBytes = doc.GenerateBytes();`,
                 { Type: "Header", Content: tpl.title },
                 { Type: "Blockquote", Content: tpl.quote },
                 { Type: "VisualSubsystem", Content: "Vector Charts | Barcodes | QR Codes | KPI Meters | MultiColumn" },
-                { Type: "Table", Content: "Anti-Orphan Auto-Fit | ACTIVE\nAI / RAG Dual Stream | ENABLED\nNative SkiaSharp Engine | OPTIMAL" }
+                { Type: "Table", Content: "Anti-Orphan Auto-Fit | ACTIVE\nAI / RAG Dual Stream | ENABLED\nShreePdf Native Vector Engine | OPTIMAL" }
             ]
         };
 
@@ -285,7 +285,7 @@ function initSiteProtection() {
     document.addEventListener('contextmenu', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         e.preventDefault();
-        showToast("🔒 Content protected — Right-click is disabled");
+        showToast("ðŸ”’ Content protected â€” Right-click is disabled");
     });
 
     // Disable dragging images and links

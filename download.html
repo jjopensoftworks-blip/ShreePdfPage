@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download ShreePdfViewer — Cross-Platform Desktop PDF Reader</title>
-    <meta name="description" content="Download ShreePdfViewer for Windows, macOS, and Linux. Standalone, ultra-fast vector PDF desktop viewer powered by ShreePdf Engine and SkiaSharp.">
+    <title>Download ShreePdfViewer â€” Cross-Platform Desktop PDF Reader</title>
+    <meta name="description" content="Download ShreePdfViewer for Windows, macOS, and Linux. Standalone, ultra-fast vector PDF desktop viewer powered by the ShreePdf Native Vector Engine.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +158,7 @@
                 <a href="viewer.html" class="nav-link"><i class="fa-solid fa-eye"></i> ShreePdfViewer</a>
                 <a href="download.html" class="nav-link active" style="color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-download"></i> Downloads</a>
                 <a href="index.html#razor-html" class="nav-link">Razor &amp; HTML</a>
-                <a href="index.html#qa-matrix" class="nav-link">1,144 Tests</a>
+                <a href="index.html#qa-matrix" class="nav-link">1,400+ Tests</a>
                 <a href="index.html#widgets" class="nav-link">Visual Widgets</a>
                 <a href="index.html#playground" class="nav-link">Playground</a>
                 <a href="index.html#benchmarks" class="nav-link">Benchmarks</a>
@@ -167,9 +167,9 @@
             </nav>
             <div class="nav-actions">
                 <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn btn-secondary">
-                    <i class="fa-solid fa-box-open"></i> NuGet v1.16.0
+                    <i class="fa-solid fa-box-open"></i> NuGet v1.17.0
                 </a>
-                <a href="https://github.com/jjopensoftworks-blip/ShreePdf" target="_blank" class="btn btn-primary">
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
@@ -179,10 +179,10 @@
     <!-- Download Hero -->
     <section class="download-hero">
         <div class="container">
-            <span class="section-eyebrow">💻 Standalone Desktop Application</span>
+            <span class="section-eyebrow">ðŸ’» Standalone Desktop Application</span>
             <h1 class="section-title" style="font-size: 2.75rem; margin-top: 0.5rem;">Get ShreePdfViewer for Desktop</h1>
             <p class="section-subtitle" style="max-width: 680px; margin: 0.75rem auto 0;">
-                Ultra-fast, native vector PDF desktop reader built with ShreePdf and SkiaSharp. Zero Chromium, zero browser dependencies, sub-10ms page rendering.
+                Ultra-fast, native vector PDF desktop reader built with the ShreePdf Native Vector Engine. Zero Chromium, zero browser dependencies, sub-10ms page rendering.
             </p>
 
             <!-- Operating Systems Grid -->
@@ -201,58 +201,39 @@
                         <a href="https://apps.microsoft.com/detail/9MSPJ2M5MFHS" target="_blank" class="btn-download-main" style="background: #0078d4; color: #ffffff;">
                             <i class="fa-brands fa-microsoft"></i> Get from Microsoft Store
                         </a>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; text-align: center;">Verified Microsoft Store Certificate Distribution · Automatic Updates</p>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; text-align: center;">Verified Microsoft Store Certificate Distribution Â· Automatic Updates</p>
                     </div>
                 </div>
 
-                <!-- macOS -->
+                <!-- .NET Engine & All Bundle (Windows / Linux / macOS) -->
                 <div class="os-card">
                     <div>
                         <div class="os-icon-title">
-                            <i class="fa-brands fa-apple"></i>
-                            <div class="os-title">macOS</div>
+                            <i class="fa-solid fa-cubes"></i>
+                            <div class="os-title">.NET SDK Suite</div>
                         </div>
-                        <p class="os-req">Requires macOS 10.15 or later (Apple Silicon / Intel)</p>
+                        <p class="os-req">.NET 8.0 (LTS) · .NET 10.0 (LTS) · .NET Standard 2.0 (Windows, Linux, macOS &amp; Docker)</p>
                         
-                        <a href="https://github.com/jjopensoftworks-blip/ShreePdf/releases" class="btn-download-main" style="background: #e2e8f0; color: #0f172a;">
-                            <i class="fa-solid fa-download"></i> Mac Universal (.dmg)
+                        <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn-download-main" style="background: #e2e8f0; color: #0f172a;">
+                            <i class="fa-solid fa-box-open"></i> Install from NuGet.org
                         </a>
-                    </div>
-
-                    <div>
-                        <div class="download-select-label">OTHER MACOS DOWNLOADS</div>
-                        <select class="download-select" onchange="if(this.value) window.location.href=this.value;">
-                            <option value="">Select a download...</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.dmg Apple Silicon (M1/M2/M3)</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.dmg Intel Chip</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.dmg Universal Bundle</option>
-                        </select>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; text-align: center;"><code>dotnet add package ShreePdf</code></p>
                     </div>
                 </div>
 
-                <!-- Linux -->
+                <!-- Cross-Platform CLI Tool -->
                 <div class="os-card">
                     <div>
                         <div class="os-icon-title">
-                            <i class="fa-brands fa-linux"></i>
-                            <div class="os-title">Linux</div>
+                            <i class="fa-solid fa-terminal"></i>
+                            <div class="os-title">CLI Tool (CI/CD)</div>
                         </div>
-                        <p class="os-req">Debian / Ubuntu / Red Hat / Fedora (x64, Arm64)</p>
+                        <p class="os-req">Global .NET Tool for Windows, Linux &amp; macOS Terminals</p>
                         
-                        <a href="https://github.com/jjopensoftworks-blip/ShreePdf/releases" class="btn-download-main" style="background: #e2e8f0; color: #0f172a;">
-                            <i class="fa-solid fa-download"></i> Debian / Ubuntu (.deb)
+                        <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn-download-main" style="background: #e2e8f0; color: #0f172a;">
+                            <i class="fa-solid fa-terminal"></i> View on NuGet.org
                         </a>
-                    </div>
-
-                    <div>
-                        <div class="download-select-label">OTHER LINUX DOWNLOADS</div>
-                        <select class="download-select" onchange="if(this.value) window.location.href=this.value;">
-                            <option value="">Select a download...</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.deb x64</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.deb Arm64</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">.rpm Red Hat / Fedora</option>
-                            <option value="https://github.com/jjopensoftworks-blip/ShreePdf/releases">AppImage Universal Package</option>
-                        </select>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; text-align: center;"><code>dotnet add package ShreePdf --version 1.17.0</code></p>
                     </div>
                 </div>
 

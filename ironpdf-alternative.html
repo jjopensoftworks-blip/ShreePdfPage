@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronPDF Alternative for .NET 8 &amp; 10: Zero-Chromium Vector PDF Engine | ShreePdf</title>
+    <meta name="description" content="Replace IronPDF's 250MB+ Chromium runtime and $749+ licensing fees with ShreePdf â€” a 5ms pure native vector PDF engine for .NET 8 and .NET 10 with HTML/Markdown ingestion, digital signatures, and AES-256 encryption.">
+    <meta name="keywords" content="IronPDF alternative, IronPDF free alternative, IronPDF vs ShreePdf, HTML to PDF C# without Chrome, .NET 8 PDF library, .NET 10 PDF generator">
+    <link rel="canonical" href="https://jjopensoftworks-blip.github.io/ShreePdfPage/ironpdf-alternative.html">
+
+    <meta property="og:title" content="IronPDF Alternative: Zero-Chromium PDF Generation for .NET 8 &amp; 10">
+    <meta property="og:description" content="Eliminate 250MB Chromium cold starts and $749+/yr per-developer fees. Generate vector PDFs from HTML, Markdown, or C# in 5ms with ShreePdf.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jjopensoftworks-blip.github.io/ShreePdfPage/ironpdf-alternative.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=1.14.0">
+
+    <style>
+        .migration-wrapper { display: flex; min-height: calc(100vh - 70px); margin-top: 70px; }
+        .left-sidebar { width: 310px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(51, 65, 85, 0.6); position: fixed; top: 70px; bottom: 0; left: 0; overflow-y: auto; padding: 1.5rem 1rem; backdrop-filter: blur(12px); z-index: 90; }
+        .sidebar-section-title { font-family: var(--font-heading); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; padding-left: 0.75rem; font-weight: 700; }
+        .sidebar-nav { list-style: none; margin-bottom: 1.75rem; }
+        .sidebar-nav-item { margin-bottom: 0.3rem; }
+        .sidebar-nav-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0.85rem; color: var(--text-muted); text-decoration: none; border-radius: 8px; font-size: 0.875rem; font-weight: 500; transition: all 0.2s ease; }
+        .sidebar-nav-link:hover { color: var(--text-main); background: rgba(51, 65, 85, 0.4); transform: translateX(3px); }
+        .sidebar-nav-link.active { color: #ffffff; background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(56, 189, 248, 0.6)); font-weight: 600; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
+        .main-content { margin-left: 310px; flex: 1; padding: 2.5rem; max-width: 1350px; }
+        .doc-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
+        .doc-header { margin-bottom: 1.25rem; border-bottom: 1px solid rgba(51, 65, 85, 0.6); padding-bottom: 0.85rem; }
+        .doc-header h1, .doc-header h2 { font-family: var(--font-heading); color: var(--text-main); display: flex; align-items: center; gap: 0.75rem; }
+        .doc-header h1 { font-size: 2.15rem; }
+        .doc-header h2 { font-size: 1.65rem; }
+        .doc-header p { color: var(--text-muted); font-size: 1.02rem; margin-top: 0.45rem; }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
+        .code-box { background: rgba(15, 23, 42, 0.9); border: 1px solid var(--bg-card-border); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+        .code-header { display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 1rem; background: rgba(30, 41, 59, 0.8); border-bottom: 1px solid var(--bg-card-border); font-size: 0.825rem; font-weight: 600; }
+        .code-header.before { color: #ef4444; border-top: 3px solid #ef4444; }
+        .code-header.after { color: #10b981; border-top: 3px solid #10b981; }
+        .code-body { padding: 1rem; font-family: var(--font-code); font-size: 0.825rem; line-height: 1.6; color: #e2e8f0; white-space: pre-wrap; word-break: break-word; }
+        .metric-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .metric-pill.success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .metric-pill.danger { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .matrix-table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--bg-card-border); }
+        .matrix-table th, .matrix-table td { padding: 0.9rem 1.1rem; text-align: left; border-bottom: 1px solid var(--bg-card-border); font-size: 0.9rem; }
+        .matrix-table th { background: rgba(30, 41, 59, 0.9); color: var(--accent); font-family: var(--font-heading); font-weight: 600; }
+        .cta-banner { background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(56, 189, 248, 0.15)); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 16px; padding: 2rem; margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        @media (max-width: 900px) { .comparison-grid { grid-template-columns: 1fr; } .migration-wrapper { flex-direction: column; } .left-sidebar { position: relative; width: 100%; top: 0; } .main-content { margin-left: 0; padding: 1.25rem; } }
+    </style>
+</head>
+<body>
+    <header class="navbar" style="position: fixed; top: 0; width: 100%; z-index: 100;">
+        <div class="nav-container">
+            <a href="index.html" class="brand" style="text-decoration: none;">
+                <img src="icon.png" alt="ShreePdf Icon" class="brand-icon-img">
+                <span class="brand-word">Shree<span class="gradient-text">Pdf</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="viewer.html" class="nav-link"><i class="fa-solid fa-eye"></i> ShreePdfViewer</a>
+                <a href="index.html#playground" class="nav-link"><i class="fa-solid fa-flask"></i> Playground</a>
+                <a href="migration.html" class="nav-link active"><i class="fa-solid fa-book"></i> Alternatives &amp; Migration</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-box-open"></i> NuGet v1.17.0</a>
+                <a href="https://github.com/jjopensoftworks-blip/ShreePdfPage" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="migration-wrapper">
+        <aside class="left-sidebar">
+            <div class="sidebar-section-title"><i class="fa-solid fa-scale-balanced"></i> Competitor Comparisons</div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="questpdf-alternative.html" class="sidebar-nav-link"><i class="fa-solid fa-file-code"></i> QuestPDF vs ShreePdf</a></li>
+                <li class="sidebar-nav-item"><a href="ironpdf-alternative.html" class="sidebar-nav-link active"><i class="fa-solid fa-microchip"></i> IronPDF vs ShreePdf</a></li>
+                <li class="sidebar-nav-item"><a href="puppeteer-sharp-alternative.html" class="sidebar-nav-link"><i class="fa-brands fa-docker"></i> PuppeteerSharp vs ShreePdf</a></li>
+                <li class="sidebar-nav-item"><a href="itext-alternative.html" class="sidebar-nav-link"><i class="fa-solid fa-cubes"></i> iText 7 vs ShreePdf</a></li>
+                <li class="sidebar-nav-item"><a href="selectpdf-alternative.html" class="sidebar-nav-link"><i class="fa-solid fa-server"></i> SelectPdf vs ShreePdf</a></li>
+                <li class="sidebar-nav-item"><a href="migration.html" class="sidebar-nav-link"><i class="fa-solid fa-compass"></i> All-in-One Migration Guide</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section class="doc-section">
+                <div class="doc-header">
+                    <h1><i class="fa-solid fa-microchip"></i> IronPDF Alternative: Zero-Chromium PDF Generation for .NET 8 &amp; 10</h1>
+                    <p>Stop bundling a 250MB+ Chromium browser process inside your ASP.NET Core / Azure Functions deployment just to render HTML, Markdown, or enterprise PDFs.</p>
+                </div>
+
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Metric / Enterprise Feature</th>
+                            <th>IronPDF (Chromium Engine)</th>
+                            <th>ShreePdf Engine (Native Vector)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cold-Start First Render Latency</strong></td>
+                            <td><span class="metric-pill danger">1,800 â€“ 4,200 ms (Spawns Chromium IPC)</span></td>
+                            <td><span class="metric-pill success">5 â€“ 12 ms (In-Process Native Vector Engine)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deployment / Container Size Overhead</strong></td>
+                            <td><span class="metric-pill danger">+280 MB â€“ 450 MB (`IronPdf.Slim` + Chrome binaries)</span></td>
+                            <td><span class="metric-pill success">~12 MB (Zero Browser Dependencies)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peak RAM Usage Under 20 Concurrent Requests</strong></td>
+                            <td><span class="metric-pill danger">650 MB â€“ 1.4 GB RAM</span></td>
+                            <td><span class="metric-pill success">~28 MB RAM</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>HTML, Razor &amp; Markdown Ingestion</strong></td>
+                            <td>Yes (via Chromium DOM)</td>
+                            <td><span class="metric-pill success">Yes (Zero-Dependency HTML/Markdown + Razor Template Support)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Merge, Split, Bates Stamping, AcroForms &amp; AES-256</strong></td>
+                            <td>Yes ($749+ / developer / year)</td>
+                            <td><span class="metric-pill success">Built-in (`PdfDocumentModifier`, `PdfPageStamper`, `PdfSigner`, `PdfFormEngine`)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="doc-section">
+                <div class="doc-header">
+                    <h2><i class="fa-solid fa-code-compare"></i> Drop-In Replacement for HTML, Markdown &amp; PDF Manipulation</h2>
+                    <p>Replace `ChromePdfRenderer` and `PdfDocument.Merge` with clean, in-process C# calls that never hang on Linux containers or Azure App Service sandboxes.</p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="code-box">
+                        <div class="code-header before">
+                            <span><i class="fa-solid fa-xmark"></i> IronPDF (Heavy Chromium Subprocess)</span>
+                            <span class="metric-pill danger">2,400ms Cold Start</span>
+                        </div>
+                        <div class="code-body">using IronPdf;
+
+// Spawns headless Chromium subprocess in background
+var renderer = new ChromePdfRenderer();
+renderer.RenderingOptions.PaperSize = PdfPaperSize.A4;
+
+using var pdf = await renderer.RenderHtmlAsPdfAsync(
+    "<h1>Monthly Statement</h1><p>Balance: $4,200.00</p>");
+
+pdf.SecuritySettings.OwnerPassword = "Secret!";
+pdf.SaveAs("statement.pdf");</div>
+                    </div>
+
+                    <div class="code-box">
+                        <div class="code-header after">
+                            <span><i class="fa-solid fa-check"></i> ShreePdf (Pure In-Process Vector Engine)</span>
+                            <span class="metric-pill success">5ms Render</span>
+                        </div>
+                        <div class="code-body">using ShreePdf.Fluent;
+using ShreePdf.Security;
+
+// Zero browser processes â€” compiles straight to vector PDF Layout
+var doc = Document.FromHtml(
+    "<h1>Monthly Statement</h1><p>Balance: $4,200.00</p>",
+    ThemePresets.ExecutiveMinimal);
+
+doc.Security.IsEncryptionEnabled = true;
+doc.Security.OwnerPassword = "Secret!";
+doc.Security.EncryptionAlgorithm = PdfEncryptionAlgorithm.AES_256Bit;
+doc.Save("statement.pdf");</div>
+                    </div>
+                </div>
+
+                <div class="cta-banner">
+                    <div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.35rem;">Eliminate Chromium Bloat Today</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Install <code>ShreePdf</code> from NuGet and cut your Docker image by 400MB while rendering 250x faster.</p>
+                    </div>
+                    <div style="display: flex; gap: 0.85rem;">
+                        <a href="index.html#playground" class="btn btn-primary"><i class="fa-solid fa-play"></i> Try Live Playground</a>
+                        <a href="https://www.nuget.org/packages/ShreePdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-download"></i> NuGet Package</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
