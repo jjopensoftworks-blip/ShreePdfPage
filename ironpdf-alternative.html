@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IronPDF Alternative for .NET 8 &amp; 10: Zero-Chromium Vector PDF Engine | ShreePdf</title>
-    <meta name="description" content="Replace IronPDF's 250MB+ Chromium runtime and $749+ licensing fees with ShreePdf â€” a 5ms pure native vector PDF engine for .NET 8 and .NET 10 with HTML/Markdown ingestion, digital signatures, and AES-256 encryption.">
+    <meta name="description" content="Replace IronPDF's 250MB+ Chromium runtime and $749+ licensing fees with ShreePdf — a 5ms pure native vector PDF engine for .NET 8 and .NET 10 with HTML/Markdown ingestion, digital signatures, and AES-256 encryption.">
     <meta name="keywords" content="IronPDF alternative, IronPDF free alternative, IronPDF vs ShreePdf, HTML to PDF C# without Chrome, .NET 8 PDF library, .NET 10 PDF generator">
     <link rel="canonical" href="https://jjopensoftworks-blip.github.io/ShreePdfPage/ironpdf-alternative.html">
 
@@ -102,17 +102,17 @@
                     <tbody>
                         <tr>
                             <td><strong>Cold-Start First Render Latency</strong></td>
-                            <td><span class="metric-pill danger">1,800 â€“ 4,200 ms (Spawns Chromium IPC)</span></td>
-                            <td><span class="metric-pill success">5 â€“ 12 ms (In-Process Native Vector Engine)</span></td>
+                            <td><span class="metric-pill danger">1,800 – 4,200 ms (Spawns Chromium IPC)</span></td>
+                            <td><span class="metric-pill success">5 – 12 ms (In-Process Native Vector Engine)</span></td>
                         </tr>
                         <tr>
                             <td><strong>Deployment / Container Size Overhead</strong></td>
-                            <td><span class="metric-pill danger">+280 MB â€“ 450 MB (`IronPdf.Slim` + Chrome binaries)</span></td>
+                            <td><span class="metric-pill danger">+280 MB – 450 MB (`IronPdf.Slim` + Chrome binaries)</span></td>
                             <td><span class="metric-pill success">~12 MB (Zero Browser Dependencies)</span></td>
                         </tr>
                         <tr>
                             <td><strong>Peak RAM Usage Under 20 Concurrent Requests</strong></td>
-                            <td><span class="metric-pill danger">650 MB â€“ 1.4 GB RAM</span></td>
+                            <td><span class="metric-pill danger">650 MB – 1.4 GB RAM</span></td>
                             <td><span class="metric-pill success">~28 MB RAM</span></td>
                         </tr>
                         <tr>
@@ -162,7 +162,7 @@ pdf.SaveAs("statement.pdf");</div>
                         <div class="code-body">using ShreePdf.Fluent;
 using ShreePdf.Security;
 
-// Zero browser processes â€” compiles straight to vector PDF Layout
+// Zero browser processes — compiles straight to vector PDF Layout
 var doc = Document.FromHtml(
     "<h1>Monthly Statement</h1><p>Balance: $4,200.00</p>",
     ThemePresets.ExecutiveMinimal);

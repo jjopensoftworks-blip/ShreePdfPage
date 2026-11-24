@@ -1,8 +1,8 @@
-﻿<div align="center">
+<div align="center">
 
 <img src="logo.png" width="360" alt="ShreePdf Engine Logo"><br><br>
 
-# ðŸŒ ShreePdf Showcase & Visual Playground
+# 🌐 ShreePdf Showcase & Visual Playground
 
 ### Official Public Web Showcase & Interactive Playground for ShreePdf Engine
 
@@ -19,23 +19,23 @@
 
 </div>
 
-## âœ¨ What's Included
+## ✨ What's Included
 
-- ðŸš€ **[`migration.html`](migration.html)**: Developer migration guide with side-by-side code conversion examples for **QuestPDF**, **iText 7**, **PuppeteerSharp**, **IronPDF**, and **SelectPdf**.
-- ðŸ“„ **`index.html`**: Semantic HTML5 web application structure with interactive playground controls, design theme switcher, and competitive market comparison.
-- ðŸŽ¨ **`style.css`**: HSL design system tokens, dark glassmorphism, ambient vector glow, custom scrollbars, and micro-animations.
-- âš¡ **`app.js`**: Interactive state engine simulating multi-source ingestion (Markdown, C# DSL, JSON), theme switching, anti-orphan auto-fit budgeting, and RAG Metadata metadata inspection.
+- 🚀 **[`migration.html`](migration.html)**: Developer migration guide with side-by-side code conversion examples for **QuestPDF**, **iText 7**, **PuppeteerSharp**, **IronPDF**, and **SelectPdf**.
+- 📄 **`index.html`**: Semantic HTML5 web application structure with interactive playground controls, design theme switcher, and competitive market comparison.
+- 🎨 **`style.css`**: HSL design system tokens, dark glassmorphism, ambient vector glow, custom scrollbars, and micro-animations.
+- ⚡ **`app.js`**: Interactive state engine simulating multi-source ingestion (Markdown, C# DSL, JSON), theme switching, anti-orphan auto-fit budgeting, and RAG Metadata metadata inspection.
 
 ---
 
-## ðŸš€ Live Demo
+## 🚀 Live Demo
 
 Experience the interactive playground live on GitHub Pages:
 **[https://jjopensoftworks-blip.github.io/ShreePdfPage](https://jjopensoftworks-blip.github.io/ShreePdfPage)**
 
 ---
 
-## ðŸ› ï¸ Local Development
+## 🛠️ Local Development
 
 To run the showcase website locally:
 
@@ -56,6 +56,6 @@ Then open `http://localhost:8080` in your browser.
 
 <div align="center">
 
-Maintained with â¤ï¸ by **[jjopensoftworks-blip](https://github.com/jjopensoftworks-blip)**
+Maintained with ❤️ by **[jjopensoftworks-blip](https://github.com/jjopensoftworks-blip)**
 
 </div>

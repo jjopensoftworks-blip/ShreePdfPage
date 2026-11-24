@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 jjopensoftworks-blip. All rights reserved.
  * ShreePdf Engine - Radiant Aesthetics and Intelligent PDF Engineering for .NET
  */
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ingestion Templates for v2.0.0 (Markdown, C# DSL, JSON, HTML / Razor)
     const sourceTemplates = {
         markdown: {
-            title: 'âš¡ AI Performance Brief',
+            title: '⚡ AI Performance Brief',
             quote: '"Loss-free RAG indexing enabled. High-speed vector rendering via the ShreePdf Vector Engine."',
             csharp: `// 1. Ingest LLM Markdown Output Directly
 string llmResponse = """
@@ -41,7 +41,7 @@ var doc = Document.FromMarkdown(llmResponse, ThemePresets.GlassmorphicDark)
 
 doc.Save("AiPerformanceBrief.pdf");`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">âš¡ AI Performance Brief</h1>
+                <h1 class="pdf-h1" id="pdfTitle">⚡ AI Performance Brief</h1>
                 <p class="pdf-quote" id="pdfQuote">"Loss-free RAG indexing enabled. High-speed vector rendering via the ShreePdf Vector Engine."</p>
 
                 <div class="pdf-section-title">EXECUTIVE METRICS</div>
@@ -74,7 +74,7 @@ doc.Save("AiPerformanceBrief.pdf");`,
             `
         },
         html: {
-            title: 'ðŸŒ Razor & HTML View Middleware',
+            title: '🌐 Razor & HTML View Middleware',
             quote: '"Zero-dependency HTML tag parsing (h1-h6, b, i, a, p, table, ul, li) directly into PDF Layout."',
             csharp: `// 2. ASP.NET Core Razor & HTML Middleware
 app.MapGet("/api/pdf/report", () => {
@@ -82,7 +82,7 @@ app.MapGet("/api/pdf/report", () => {
     return PdfResult.FromHtml(htmlContent, ThemePresets.SaaSAnalytics);
 });`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle" style="color: var(--accent);">ðŸŒ Razor & HTML View Middleware</h1>
+                <h1 class="pdf-h1" id="pdfTitle" style="color: var(--accent);">🌐 Razor & HTML View Middleware</h1>
                 <p class="pdf-quote" id="pdfQuote">"Zero-dependency HTML tag parsing directly into ShreePdf document layout."</p>
 
                 <div class="pdf-section-title">ASP.NET CORE MINIMAL API</div>
@@ -93,7 +93,7 @@ app.MapGet("/api/pdf/report", () => {
             `
         },
         csharp: {
-            title: 'ðŸ’¼ Executive Dashboard & KPIs',
+            title: '💼 Executive Dashboard & KPIs',
             quote: '"Fluent C# DSL for native vector charts, stat cards, barcodes, and multi-column flow."',
             csharp: `// 3. Direct C# Fluent API Construction (v1.8.0)
 var doc = Document.Create("Executive Dashboard")
@@ -109,7 +109,7 @@ var doc = Document.Create("Executive Dashboard")
     .AddQrCode("https://example.com/invoice/9901")
     .AddMultiColumn("ShreePdf balances text cleanly across columns.", columns: 2, height: 100);`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">ðŸ’¼ Executive Dashboard & KPIs</h1>
+                <h1 class="pdf-h1" id="pdfTitle">💼 Executive Dashboard & KPIs</h1>
                 <p class="pdf-quote" id="pdfQuote">"Fluent C# DSL for native vector charts, stat cards, barcodes, and multi-column flow."</p>
 
                 <table class="pdf-table">
@@ -125,7 +125,7 @@ var doc = Document.Create("Executive Dashboard")
             `
         },
         json: {
-            title: 'ðŸ“Š Quarterly Data Report',
+            title: '📊 Quarterly Data Report',
             quote: '"Data-bound payload serialized from JSON REST API response."',
             csharp: `// 4. JSON Payload Ingestion
 string jsonPayload = File.ReadAllText("report_payload.json");
@@ -136,7 +136,7 @@ var doc = Document.FromJson(jsonPayload, ThemePresets.GlassmorphicDark)
 
 byte[] pdfBytes = doc.GenerateBytes();`,
             htmlBody: `
-                <h1 class="pdf-h1" id="pdfTitle">ðŸ“Š Quarterly Data Report</h1>
+                <h1 class="pdf-h1" id="pdfTitle">📊 Quarterly Data Report</h1>
                 <p class="pdf-quote" id="pdfQuote">"Data-bound payload serialized from JSON REST API response."</p>
 
                 <div class="pdf-container-box">
@@ -285,7 +285,7 @@ function initSiteProtection() {
     document.addEventListener('contextmenu', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         e.preventDefault();
-        showToast("ðŸ”’ Content protected â€” Right-click is disabled");
+        showToast("🔒 Content protected — Right-click is disabled");
     });
 
     // Disable dragging images and links
